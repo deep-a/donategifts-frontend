@@ -1,0 +1,45 @@
+// move
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.grid {
+  padding: 0 30px;
+}
+//
+
+.card {
+  position: relative;
+  flex-direction: column;
+  min-height: 400px;
+  background-color: bisque;
+
+  &__msg-btn {
+    position: absolute;
+    right: -2%;
+    top: -5%;
+    background-color: bisque;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+  }
+
+  &__img {
+    height: 45%;
+    background-color: lightseagreen;
+    overflow: hidden;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  &__info {
+    .name {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    button {
+      background-color: lightseagreen;
+    }
+  }
+}

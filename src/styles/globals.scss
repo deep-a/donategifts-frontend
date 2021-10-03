@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './index.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -91,7 +93,6 @@ html {
   src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
 }
 
-
 // -------------our new color scheme--------------------------
 .dg-bg-blue {
   background-color: #333a64;
@@ -102,11 +103,11 @@ html {
 }
 
 .dg-color-grn {
-  color: #173A24;
+  color: #173a24;
 }
 
 .dg-bg-grn {
-  color: #173A24;
+  color: #173a24;
 }
 
 .dg-bg-red {

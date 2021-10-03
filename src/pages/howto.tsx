@@ -1,14 +1,16 @@
 import React from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import useTranslation from 'next-i18next';
+// import useTranslation from 'next-i18next';
+// not going to worry about the i18 stuff for right now
 import Image from 'next/image';
-// import css from '../styles/howTo.module.scss';
+import Link from 'next/link';
 import howToCheckOut from '../../public/assets/img/howto-checkout.svg';
 import wishCardClick from '../../public/assets/img/wishcard-click.svg';
 import howToGift from '../../public/assets/img/howto-gift.svg';
 import registerImg from '../../public/assets/img/register.svg';
 import notified from '../../public/assets/img/notified.svg';
 import BaseLayout from '@/components/layout/BaseLayout';
+import Btn from '@/components/common/Button';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -19,7 +21,8 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Howto(): JSX.Element {
-  const { t } = useTranslation('common');
+  // const { t } = useTranslation('common');
+  // unused var warnings, so I commented this out
   return (
     <BaseLayout pageTitle="How does Donategifts work?">
       <header>
@@ -31,15 +34,11 @@ export default function Howto(): JSX.Element {
               </h1>
               <div className="text-3xl">
                 <a href="#donor">
-                  <button className="mt-4 py-4 px-4 mr-5 dg-bg-blue text-white rounded-lg">
-                    Donors
-                  </button>
+                  <Btn className=" mt-4 font-cool mr-5" children="Donors" />
                 </a>
                 and
                 <a href="#partner">
-                  <button className="mt-4 py-4 px-4 ml-5 dg-bg-blue text-white rounded-lg">
-                    Partners
-                  </button>
+                  <Btn className=" mt-4 ml-5" children="Partners" />
                 </a>
               </div>
             </div>
@@ -155,9 +154,12 @@ export default function Howto(): JSX.Element {
               <h1 className="font-cool dg-color-blue text-4xl">
                 Ready to donate gifts?
               </h1>
-              <button className="mt-6 text-lg font-semibold font-quick dg-bg-blue text-white rounded-lg px-5 py-5 hover:bg-blue-500 focus:outline-none">
-                Start Browsing Wishes
-              </button>
+              <Link href="/wishcards">
+                <Btn
+                  className=" mt-6 text-lg font-quick"
+                  children="Start Browsing Wishes"
+                />
+              </Link>
             </div>
           </div>
         </div>
@@ -254,9 +256,12 @@ export default function Howto(): JSX.Element {
               <h1 className="font-cool dg-color-blue text-4xl">
                 Ready to become our non profit partner?
               </h1>
-              <button className="mt-6 text-lg font-semibold font-quick dg-bg-blue text-white rounded-lg px-5 py-5 hover:bg-blue-500 focus:outline-none">
-                Register Your Agency
-              </button>
+              <Link href="/signup">
+                <Btn
+                  className=" mt-6 text-lg font-quick"
+                  children="Register Your Agency"
+                />
+              </Link>
             </div>
           </div>
         </div>
