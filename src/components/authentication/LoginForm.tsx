@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
+import Modal from '../common/Modal';
 import {
   formClass,
   formContainerClass,
@@ -29,8 +30,14 @@ export default function LoginForm(): JSX.Element {
     loginSubmitBtnClick(data);
   };
 
+  const testFunc = () => {
+    return <p>Hello Mom</p>
+  };
+
   return (
     <div className={formContainerClass}>
+      {/* Below line is for testing only */}
+      <Modal isVisible body={testFunc} />
       <form onSubmit={handleSubmit(onSubmit)} className={formClass}>
         <div className={formHeaderClass}>
           <Link href="/login">
