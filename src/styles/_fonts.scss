@@ -1,0 +1,63 @@
+/* 
+-----------------------------
+v1.0 Typography
+-----------------------------
+*/
+@font-face {
+    font-family: "DK-Crayon-Crumble";
+    font-weight: 400;
+    src: url("../../public/assets/fonts/dk-crayon-crumble-webfont.woff") format("woff");
+}
+@font-face {
+    font-family: "DK-Cool-Crayon";
+    font-weight: 400;
+    src: url("../../public/assets/fonts/dkcoolcrayon-webfont.woff") format("woff");
+}
+@font-face {
+    font-family: "Quicksand";
+    font-weight: 300, 400, 500, 600, 700;
+    src: url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+}
+
+/* 
+  -----------------------------
+  font variables
+  -----------------------------
+  */
+$font-heading: "DK-Cool-Crayon", Helvetica, sans-serif;
+$font-body: "Quicksand", Helvetica, sans-serif;
+$font-accent: "DK-Crayon-Crumble", Helvetica, sans-serif;
+
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+/* 
+  -----------------------------
+  font functions
+  -----------------------------
+  */
+@mixin font-styling($family: null, $size: null, $color: null, $weight: null, $height: null, $spacing: null) {
+    @if $family {
+        font-family: $family;
+    } @else {
+        font-family: $font-body;
+    }
+    @if $size {
+        font-size: $size;
+    }
+    @if $color {
+        color: $color;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $height {
+        line-height: $height;
+    }
+    @if $spacing {
+        letter-spacing: $spacing;
+    }
+}

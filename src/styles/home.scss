@@ -1,0 +1,76 @@
+/* 
+-----------------------------
+Reusable Hero
+-----------------------------
+*/
+.hero {
+    text-align: center;
+    color: $white;
+    h1 {
+        @include font-styling($font-heading, 3.4em);
+        text-transform: uppercase;
+    }
+    h4 {
+        @include font-styling($font-body, 1.3rem);
+        padding-bottom: 0.5rem;
+    }
+    button {
+        @include font-styling($font-body, 1.3rem);
+    }
+}
+
+/* 
+-----------------------------
+Text Typing Effect 
+-----------------------------
+*/
+.typing {
+    // margin-left: 10px;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 60px;
+        border: 2px solid $white;
+        animation: blink 0.5s infinite ease;
+        -webkit-animation: blink 0.5s infinite ease;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ---------------home hero section */
+#home-bg {
+    background: url("../../public/assets/img/dg-2022-bg-01.svg") center center;
+    min-height: 100vh;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* mobile screen bg changes */
+@media only screen and (max-width: 600px) {
+    #home-bg {
+        background: url("../../public/assets/img/dg-2022-bg-01.svg") center center;
+        min-height: 835px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

@@ -54,8 +54,8 @@ export default function NavBar(): JSX.Element {
               <Image
                 src="/assets/img/new-donate-gifts-logo-2.png"
                 alt="donate-gifts-logo"
-                width="90"
-                height="95"
+                width="65"
+                height="65"
               />
             </button>
           </Link>

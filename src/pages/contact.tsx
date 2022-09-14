@@ -13,7 +13,9 @@ export async function getStaticProps({ locale }) {
 export default function Contact(): JSX.Element {
   return (
     <BaseLayout pageTitle="Contact Page">
-      <div>Contact Page</div>
+      <div>
+        <h1>hello this is a contact page</h1>
+      </div>
     </BaseLayout>
   );
 }
