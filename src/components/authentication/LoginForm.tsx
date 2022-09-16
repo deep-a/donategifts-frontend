@@ -31,7 +31,7 @@ export default function LoginForm(): JSX.Element {
   };
 
   const testFunc = () => {
-    return <p>Hello Mom</p>
+    return <p>Hello Mom</p>;
   };
 
   return (
