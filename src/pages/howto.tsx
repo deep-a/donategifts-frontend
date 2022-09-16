@@ -11,6 +11,7 @@ import registerImg from '../../public/assets/img/register.svg';
 import notified from '../../public/assets/img/notified.svg';
 import BaseLayout from '@/components/layout/BaseLayout';
 import Btn from '@/components/common/Button';
+import { Button } from 'react-bootstrap';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -34,11 +35,11 @@ export default function Howto(): JSX.Element {
               </h1>
               <div className="text-3xl">
                 <a href="#donor">
-                  <Btn className=" mt-4 font-cool mr-5" children="Donors" />
+                  <Button className=" mt-4 font-cool mr-5" children="Donors" />
                 </a>
                 and
                 <a href="#partner">
-                  <Btn className=" mt-4 ml-5" children="Partners" />
+                  <Button className=" mt-4 ml-5" children="Partners" />
                 </a>
               </div>
             </div>

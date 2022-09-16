@@ -1,10 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import "./colors";
 @import "./fonts";
 @import "./utils";
+@import "./nav";
 
 @import "./home.scss";
 @import "./wishcards.scss";
@@ -19,53 +16,8 @@ html {
   margin: 0;
   font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
-
   body {
     min-height: 100%;
-    color: theme("colors.primary");
-
-    #navbar-toggler-item {
-      width: 30px;
-      height: 30px;
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-
-    .mission-image {
-      width: 400px;
-    }
-
-    // react-accessible-accordion/dist/fancy-example.css override
-    .accordion_button {
-      background-color: theme("colors.blue");
-      color: theme("colors.white");
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      text-align: left;
-      border: none;
-
-      &:hover {
-        background-color: theme("colors.grey");
-        color: theme("colors.white");
-      }
-
-      &:before {
-        display: inline-block;
-        content: "";
-        height: 10px;
-        width: 10px;
-        margin-right: 12px;
-        border-bottom: 2px solid;
-        border-right: 2px solid;
-        transform: rotate(-45deg);
-      }
-    }
-
-    .accordion_panel {
-      padding: 20px;
-      text-align: left;
-      animation: fadein 0.35s ease-in;
-    }
   }
 }
 

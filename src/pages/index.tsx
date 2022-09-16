@@ -39,6 +39,37 @@ export default function Index(): JSX.Element {
       <div className="wishcards">
         <h1>Donate School Supplies</h1>
       </div>
+
+      <div className="thanks custom-wrapper py-5">
+        <div className="container" id="about">
+          <h1 className="mb-3">We Need Your Help</h1>
+          <div className="row">
+            <div className="col-md-6 order-1 p-5">
+              <img
+                src="/public/img/kids-cover.jpg"
+                alt="donation drop off near me"
+                className="img-fluid grn-box"
+                loading="lazy"
+              />
+            </div>
+            <div className="col-md-6 text-center py-5 px-3">
+              <p className="text-left subtext quick-font">
+                500,000+ kids spend time in foster care each year and 4.2M+
+                youth are homeless in the United States. For many of them,
+                Christmas time can be sad and lonely because they are undergoing
+                stressful situations. With your generosity and kindness, we are
+                able to provide a moment of happiness to the kids who are in
+                crisis. By creating this platform, we wish to provide effortless
+                and convenient ways to share the joy of the holidays. <br />
+                Your gifts make it possible to bring happiness to the kids.
+              </p>
+              <a href="/contact" className="btn-white-navy-lg">
+                How To Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </BaseLayout>
   );
 }
