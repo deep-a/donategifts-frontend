@@ -3,7 +3,7 @@ import React from 'react';
 // when passing custom className, add a leading whitespace first (e.g " mt-3")
 // because it concats with defaults
 
-interface ButtonProps {
+interface IButtonProps {
   color: string;
   bg: string;
   children?: React.ReactNode;
@@ -20,7 +20,7 @@ const textWhite = '#fff';
 const rounded = '15px';
 const bgDefault = '#333a64';
 
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<IButtonProps> = ({
   color,
   bg,
   children,
