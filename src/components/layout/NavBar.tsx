@@ -38,7 +38,7 @@ export default function NavBar(): JSX.Element {
   };
 
   return (
-    <Navbar key={expand} bg="light" expand={expand} className="nav-main">
+    <Navbar bg="light" expand={expand} className="nav-main">
       <Container>
         <Navbar.Brand>
           <Link href="/">
@@ -64,8 +64,8 @@ export default function NavBar(): JSX.Element {
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               {navItems.items.map((item) => (
-                <Link href={item.link}>
-                  <button type="button" className="btn-link" key={item.text}>
+                <Link href={item.link} key={item.text}>
+                  <button type="button" className="btn-link">
                     {item.text}
                   </button>
                 </Link>
