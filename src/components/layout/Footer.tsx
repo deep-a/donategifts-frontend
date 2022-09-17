@@ -43,49 +43,47 @@ export default function Footer(): JSX.Element {
   ];
 
   return (
-    <div className="font-quick w-full bg-primary bg-dark p-6">
-      <p className="text-yellow p-2 text-lg flex justify-center">
-        <i className="fa fa-heart mt-1" aria-hidden />
-        <a
-          href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LA5DA2K2C8HLW"
-          rel="noreferrer"
-          title="support our organization by paypal donation"
-          target="_blank"
-          className="mr-1 ml-1 hover:underline"
-        >
-          <span>{t('common:supportOurCause')}</span>
-        </a>
-        <i className="fa fa-heart mt-1" aria-hidden />
-      </p>
-      <div className="flex flex-wrap justify-center">
-        <div className="text-white">
-          <button type="button" className="px-2">
-            <a
-              href="https://www.instagram.com/donategifts/"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:underline"
-            >
-              <span>{t('common:socialMedia')}</span>
-            </a>
-          </button>
-          <span>|</span>
-        </div>
-        {breadCrumbs.map((item, index) => (
-          <div className="text-white" key={item.text}>
-            <button type="button" className="px-2">
-              <Link href={item.link}>
-                <span className="hover:underline">{item.text}</span>
+    <div className="footer_main">
+      <div className="footer_main_container">
+        <p className="footer_main_paypal">
+          <i className="fa fa-heart mt-1" aria-hidden />
+          <a
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LA5DA2K2C8HLW"
+            rel="noreferrer"
+            title="support our organization by paypal donation"
+            target="_blank"
+            className="footer_main_paypal"
+          >
+            <span>{t('common:supportOurCause')}</span>
+          </a>
+          <i className="fa fa-heart" aria-hidden />
+        </p>
+        <div className="footer_main_row">
+          <div>
+            <button type="button" className="footer_main_row_button">
+              <Link href={'https://www.instagram.com/donategifts/'}>
+                <span className="hover:underline">{'Social Media'}</span>
               </Link>
             </button>
-            {index + 1 !== breadCrumbs.length && <span>|</span>}
+            <span>|</span>
           </div>
-        ))}
-      </div>
-      <div className="text-white p-2 flex justify-center space-x-1">
-        <p>Donate Gifts Inc.</p>
-        <p>{new Date().getFullYear()}.</p>
-        <p>{t('common:allRightsReserved')}</p>
+          {breadCrumbs.map((item, index) => (
+            <div key={item.text}>
+              <button type="button" className="footer_main_row_button">
+                <Link href={item.link}>
+                  <span className="hover:underline">{item.text}</span>
+                </Link>
+              </button>
+              {index + 1 !== breadCrumbs.length && <span>|</span>}
+            </div>
+          ))}
+        </div>
+        <div className="footer_main_row">
+          <div>501(c)(3) non profit charitable organization</div>
+        </div>
+        <div className="footer_main_row">
+          <div>Donate Gifts Inc.Copyright © 2022 All rights reserved!</div>
+        </div>
       </div>
     </div>
   );

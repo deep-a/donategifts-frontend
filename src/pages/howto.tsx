@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // not going to worry about the i18 stuff for right now
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from 'react-bootstrap';
 import howToCheckOut from '../../public/assets/img/howto-checkout.svg';
 import wishCardClick from '../../public/assets/img/wishcard-click.svg';
 import howToGift from '../../public/assets/img/howto-gift.svg';
@@ -11,7 +12,6 @@ import registerImg from '../../public/assets/img/register.svg';
 import notified from '../../public/assets/img/notified.svg';
 import BaseLayout from '@/components/layout/BaseLayout';
 import Btn from '@/components/common/Button';
-import { Button } from 'react-bootstrap';
 
 export async function getStaticProps({ locale }) {
   return {

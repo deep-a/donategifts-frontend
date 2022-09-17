@@ -1,0 +1,46 @@
+.footer_main {
+  padding: 10px 0;
+  font-size: 1rem;
+  color: $white;
+  text-align: center;
+  background: $footerBackground;
+
+  &_container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &_paypal {
+    color: $footerPayPal;
+    text-decoration: none;
+    a:hover {
+      color: $footerPayPal;
+      text-decoration: underline;
+    }
+  }
+
+  &_row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+    margin-bottom: 1rem;
+    &_button {
+      text-decoration: none;
+      padding-right: 6px;
+      background-color: transparent;  
+      color: white;
+      border: none;
+      outline: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+}
