@@ -1,34 +1,23 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { initializeApp, getApps } from 'firebase/app';
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
-// if (firebase.apps.length === 0) {
-//   firebase.initializeApp({
-//     apiKey: process.env.NEXT_PUBLIC_apiKey,
-//     authDomain: process.env.NEXT_PUBLIC_authDomain,
-//     databaseURL: process.env.NEXT_PUBLIC_databaseURL,
-//     projectId: process.env.NEXT_PUBLIC_projectId,
-//     storageBucket: process.env.NEXT_PUBLIC_storageBucket,
-//     messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
-//     appId: process.env.NEXT_PUBLIC_appId,
-//   });
-// }
+if (getApps().length === 0) {
+  initializeApp({
+    apiKey: process.env.APP_API_KEY,
+    authDomain: 'donategifts.firebaseapp.com',
+  });
+}
 
 export interface IAuthResponse {
   token: string;
 }
 
-export async function registerUserWithFireBase(data: {
-  email: string;
-  password: string;
-}): Promise<IAuthResponse> {
+export async function registerUserWithFireBase(data: { email: string; password: string }): Promise<IAuthResponse> {
   const { email, password } = data;
   try {
-    let token = '';
-    const result = await firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password);
-    console.log('user created');
-    token = await result.user.getIdToken();
+    const result = await createUserWithEmailAndPassword(getAuth(), email, password);
+    console.log('user created:', result);
+    const token = await result.user.getIdToken();
     return { token };
   } catch (error) {
     const errorCode = error.code;
@@ -41,17 +30,11 @@ export async function registerUserWithFireBase(data: {
   }
 }
 
-export async function loginUserWithFireBase(data: {
-  email: string;
-  password: string;
-}): Promise<IAuthResponse> {
+export async function loginUserWithFireBase(data: { email: string; password: string }): Promise<IAuthResponse> {
   const { email, password } = data;
   try {
-    let token = '';
-    const result = await firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password);
-    token = await result.user.getIdToken();
+    const result = await signInWithEmailAndPassword(getAuth(), email, password);
+    const token = await result.user.getIdToken();
     return { token };
   } catch (error) {
     const errorCode = error.code;
