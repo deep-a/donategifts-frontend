@@ -277,35 +277,41 @@ textarea {
     width: 400px;
 }
 
+// FAQ page
+
 // react-accessible-accordion/dist/fancy-example.css override
-.accordion_button {
-    background-color: theme("colors.blue");
-    color: theme("colors.white");
+.faq {
+    h1 {
+        @include font-styling($font-heading, 2.25rem, $navy, $medium);
+    }
+}
+.accordion-btn {
+    @include font-styling($font-body, 1rem, $white, $medium);
+    background-color: $navy;
     cursor: pointer;
-    padding: 18px;
+    padding: 1.5rem;
     width: 100%;
     text-align: left;
-    border: none;
-
-    &:hover {
-        background-color: theme("colors.grey");
-        color: theme("colors.white");
+    border: solid 4px $white;
+    border-radius: 0.5rem;
+    &:hover,
+    &:active {
+        background-color: $orange;
     }
-
     &:before {
         display: inline-block;
         content: "";
         height: 10px;
         width: 10px;
         margin-right: 12px;
-        border-bottom: 2px solid;
-        border-right: 2px solid;
+        border-bottom: 2px solid $white;
+        border-right: 2px solid $white;
         transform: rotate(-45deg);
     }
 }
 
-.accordion_panel {
-    padding: 20px;
+.accordion-panel {
+    padding: 2rem;
     text-align: left;
     animation: fadein 0.35s ease-in;
 }
