@@ -16,16 +16,14 @@ export async function registerUserWithFireBase(data: { email: string; password: 
   const { email, password } = data;
   try {
     const result = await createUserWithEmailAndPassword(getAuth(), email, password);
-    console.log('user created:', result);
     const token = await result.user.getIdToken();
     return { token };
   } catch (error) {
-    const errorCode = error.code;
     let errorMessage = error.message;
-    if (errorCode === 'auth/weak-password') {
+    if (error.code === 'auth/weak-password') {
       errorMessage = 'The password is too weak.';
     }
-    console.log(error);
+
     throw new Error(errorMessage);
   }
 }
@@ -37,12 +35,11 @@ export async function loginUserWithFireBase(data: { email: string; password: str
     const token = await result.user.getIdToken();
     return { token };
   } catch (error) {
-    const errorCode = error.code;
     let errorMessage = error.message;
-    if (errorCode === 'auth/wrong-password') {
+    if (error.code === 'auth/wrong-password') {
       errorMessage = 'Wrong password.';
     }
-    console.log(error);
+
     throw new Error(errorMessage);
   }
 }

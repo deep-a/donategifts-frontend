@@ -53,12 +53,7 @@ export default function LoginForm(): JSX.Element {
           </Link>
         </div>
 
-        <FormInput
-          type="text"
-          {...register('email')}
-          placeholder="Email/Username"
-          errorMsg={errors.email?.message}
-        />
+        <FormInput type="text" {...register('email')} placeholder="Email/Username" errorMsg={errors.email?.message} />
 
         <FormInput
           type="password"

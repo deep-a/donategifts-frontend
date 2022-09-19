@@ -22,9 +22,9 @@ export async function getStaticProps({ locale }: Record<string, string>): Promis
 
 export default function Index(): JSX.Element {
   useEffect(() => {
-    const txtElement = document.querySelector('.typing');
-    const words = JSON.parse(txtElement.getAttribute('data-words'));
-    const wait = Number.parseInt(txtElement.getAttribute('data-wait'), 10);
+    const txtElement: HTMLElement = document.querySelector('.typing');
+    const words = JSON.parse(txtElement.dataset.words);
+    const wait = Number.parseInt(txtElement.dataset.wait, 10);
     const tw = new TypeWriter(txtElement, words, wait);
     tw.type();
   });

@@ -28,23 +28,20 @@ export default function RegisterForm(props: IRegisterFormProps): JSX.Element {
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm({
     resolver: registerResolver,
   });
   const router = useRouter();
 
-  const onSubmit = (data: { userRole: string; email: string; password: string }) => {
+  const onSubmit = async (data: { userRole: string; email: string; password: string }) => {
     const { userRole, email, password } = data;
 
-    console.log(data);
-
     if (userRole === 'agency') {
-      router.push('/');
+      await router.push('/');
     }
 
-    registerSubmitBtnClick({ email, password });
+    await registerSubmitBtnClick({ email, password });
   };
 
   return (
@@ -68,25 +65,35 @@ export default function RegisterForm(props: IRegisterFormProps): JSX.Element {
           type="text"
           {...register('firstName')}
           placeholder="First name"
-          errorMsg={errors.firstName?.message}
+          errorMsg={String(errors.firstName?.message)}
         />
 
-        <FormInput type="text" {...register('lastName')} placeholder="Last name" errorMsg={errors.lastName?.message} />
+        <FormInput
+          type="text"
+          {...register('lastName')}
+          placeholder="Last name"
+          errorMsg={String(errors.lastName?.message)}
+        />
 
-        <FormInput type="text" {...register('email')} placeholder="Email/Username" errorMsg={errors.email?.message} />
+        <FormInput
+          type="text"
+          {...register('email')}
+          placeholder="Email/Username"
+          errorMsg={String(errors.email?.message)}
+        />
 
         <FormInput
           type="password"
           {...register('password')}
           placeholder="Password"
-          errorMsg={errors.password?.message}
+          errorMsg={String(errors.password?.message)}
         />
 
         <FormInput
           type="password"
           {...register('passwordConfirm')}
           placeholder="Confirm Password"
-          errorMsg={errors.passwordConfirm?.message}
+          errorMsg={String(errors.passwordConfirm?.message)}
         />
 
         <div className={formGroupClass}>
@@ -105,7 +112,7 @@ export default function RegisterForm(props: IRegisterFormProps): JSX.Element {
             />
             <p className={radioLabelContainer}>Foster Care Partner</p>
           </div>
-          <p className={errorClass}>{errors.userRole?.message}</p>
+          <p className={errorClass}>{String(errors.userRole?.message)}</p>
         </div>
 
         <input type="submit" className={submitBtnClass} value="Sign Up" />

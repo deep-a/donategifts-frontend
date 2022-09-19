@@ -8,9 +8,11 @@ module.exports = {
     '/coverage/',
     '/.storybook/',
   ],
-  testRegex: '(/tests/.*|\\.(test|spec))\\.(ts|tsx|js)$',
-  testURL: 'http://localhost',
+  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
   testEnvironment: 'jsdom',
+  testEnvironmentOptions: {
+    url: 'http://localhost'
+  },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
