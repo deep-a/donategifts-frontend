@@ -1,12 +1,4 @@
-@import "./colors";
-@import "./fonts";
-@import "./utils";
-@import "./nav";
-@import "./footer";
-
-@import "./home";
-@import "./wishcards";
-@import "./card";
+@import "includes";
 
 * {
   box-sizing: border-box;

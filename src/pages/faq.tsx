@@ -6,7 +6,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from 'react-accessible-accordion';
-// extended in globals.scss
+// extended in style.scss
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { v4 as uuidv4 } from 'uuid';
