@@ -15,7 +15,7 @@
   "scripts": {
     "build": "next build",
     "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
-    "lint": "eslint --fix --ext .ts,.tsx --ignore-path .eslintignore src/",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .eslintignore src/",
     "start": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next start",
     "test": "jest",
     "test:coverage": "jest --coverage",
