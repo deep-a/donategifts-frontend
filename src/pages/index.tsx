@@ -68,7 +68,7 @@ export default function Index(): JSX.Element {
           <div className="row">
             <div className="col-md-6 order-1 p-5">
               <img
-                src="/public/img/kids-cover.jpg"
+                src="/assets/img/kids-cover.jpg"
                 alt="donation drop off near me"
                 className="img-fluid grn-box"
                 loading="lazy"
