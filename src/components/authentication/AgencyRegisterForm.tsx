@@ -43,9 +43,7 @@ export default function AgencyRegisterForm(): JSX.Element {
   return (
     <div className={formContainerClass}>
       <form onSubmit={handleSubmit(onSubmit)} className={formClass}>
-        <div className={agencyFormHeaderClass}>
-          Last step: Register your Agency
-        </div>
+        <div className={agencyFormHeaderClass}>Last step: Register your Agency</div>
 
         <FormInput
           type="text"
@@ -116,11 +114,7 @@ export default function AgencyRegisterForm(): JSX.Element {
                 control={control}
                 name="agencyPhone"
                 render={() => (
-                  <InputMask
-                    mask="999-999-9999"
-                    maskPlaceholder="Phone Number: 123-456-7890"
-                    className={inputClass}
-                  />
+                  <InputMask mask="999-999-9999" maskPlaceholder="Phone Number: 123-456-7890" className={inputClass} />
                 )}
               />
             </div>
@@ -130,11 +124,7 @@ export default function AgencyRegisterForm(): JSX.Element {
 
         <div className={formGroupClass}>
           <div className={inputContainerClass}>
-            <textarea
-              {...register('agencyBio')}
-              placeholder="Agency Description"
-              className={agencyBioInputClass}
-            />
+            <textarea {...register('agencyBio')} placeholder="Agency Description" className={agencyBioInputClass} />
           </div>
           <p className={errorClass}>{errors.agencyBio?.message}</p>
         </div>

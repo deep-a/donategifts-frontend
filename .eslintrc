@@ -75,9 +75,6 @@
         "selector": "interface",
         "format": [
           "PascalCase"
-        ],
-        "prefix": [
-          "I"
         ]
       }
     ],
@@ -128,9 +125,7 @@
     "import/parsers": {
       "@typescript-eslint/parser": [
         ".ts",
-        ".tsx",
-        ".js",
-        ".jsx"
+        ".tsx"
       ]
     },
     "import/resolver": {
@@ -139,8 +134,6 @@
       },
       "node": {
         "extensions": [
-          ".js",
-          ".jsx",
           ".ts",
           ".tsx"
         ]

@@ -13,12 +13,7 @@ export default function Modal(props: IModalProps): JSX.Element {
   const { isVisible, body: ModalBody } = props;
 
   return (
-    <div
-      className={isVisible ? modalClass : 'hidden'}
-      tabIndex={-1}
-      role="dialog"
-      aria-hidden="true"
-    >
+    <div className={isVisible ? modalClass : 'hidden'} tabIndex={-1} role="dialog" aria-hidden="true">
       <div className={modalChildClass}>
         <ModalBody />
       </div>
