@@ -107,6 +107,9 @@
   "lint-staged": {
     "*.{.ts}": "eslint"
   },
+  "engines": {
+    "node": "18"
+  },
   "browserslist": {
     "production": [
       ">0.2%",

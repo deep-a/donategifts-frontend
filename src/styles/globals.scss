@@ -4,9 +4,9 @@
 @import "./nav";
 @import "./footer";
 
-@import "./home.scss";
-@import "./wishcards.scss";
-@import "@/components/wishcard/Card/Card.scss";
+@import "./home";
+@import "./wishcards";
+@import "./card";
 
 * {
   box-sizing: border-box;

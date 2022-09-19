@@ -35,11 +35,7 @@ export default function RegisterForm(props: IRegisterFormProps): JSX.Element {
   });
   const router = useRouter();
 
-  const onSubmit = (data: {
-    userRole: string;
-    email: string;
-    password: string;
-  }) => {
+  const onSubmit = (data: { userRole: string; email: string; password: string }) => {
     const { userRole, email, password } = data;
 
     console.log(data);
@@ -75,19 +71,9 @@ export default function RegisterForm(props: IRegisterFormProps): JSX.Element {
           errorMsg={errors.firstName?.message}
         />
 
-        <FormInput
-          type="text"
-          {...register('lastName')}
-          placeholder="Last name"
-          errorMsg={errors.lastName?.message}
-        />
+        <FormInput type="text" {...register('lastName')} placeholder="Last name" errorMsg={errors.lastName?.message} />
 
-        <FormInput
-          type="text"
-          {...register('email')}
-          placeholder="Email/Username"
-          errorMsg={errors.email?.message}
-        />
+        <FormInput type="text" {...register('email')} placeholder="Email/Username" errorMsg={errors.email?.message} />
 
         <FormInput
           type="password"
@@ -106,12 +92,7 @@ export default function RegisterForm(props: IRegisterFormProps): JSX.Element {
         <div className={formGroupClass}>
           <p className="text-2xl text-white">Signing up as:</p>
           <div className={radioContainerClass}>
-            <input
-              {...register('userRole')}
-              type="radio"
-              className={radioClass}
-              value="donor"
-            />
+            <input {...register('userRole')} type="radio" className={radioClass} value="donor" />
             <p className={radioLabelContainer}>Gift Sender</p>
           </div>
           <div className={radioContainerClass}>
