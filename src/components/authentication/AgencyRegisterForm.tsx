@@ -35,8 +35,7 @@ export default function AgencyRegisterForm(): JSX.Element {
   });
   const router = useRouter();
 
-  const onSubmit = async (data) => {
-    console.log(data);
+  const onSubmit = async () => {
     await router.push('/');
   };
 
@@ -49,28 +48,28 @@ export default function AgencyRegisterForm(): JSX.Element {
           type="text"
           {...register('agencyName')}
           placeholder="Agency Name"
-          errorMsg={errors.agencyName?.message}
+          errorMsg={String(errors.agencyName?.message)}
         />
 
         <FormInput
           type="text"
           {...register('agencyWebsite')}
           placeholder="Agency Website (if any)"
-          errorMsg={errors.agencyWebsite?.message}
+          errorMsg={String(errors.agencyWebsite?.message)}
         />
 
         <FormInput
           type="text"
           {...register('address1')}
           placeholder="Agency Address Line 1"
-          errorMsg={errors.address1?.message}
+          errorMsg={String(errors.address1?.message)}
         />
 
         <FormInput
           type="text"
           {...register('address2')}
           placeholder="Address Line 2"
-          errorMsg={errors.address2?.message}
+          errorMsg={String(errors.address2?.message)}
         />
 
         <div className={cityStateZipContainerClass}>
@@ -78,7 +77,7 @@ export default function AgencyRegisterForm(): JSX.Element {
             type="text"
             {...register('city')}
             placeholder="City"
-            errorMsg={errors.city?.message}
+            errorMsg={String(errors.city?.message)}
             containerClass={cityGroupClass}
           />
 
@@ -86,7 +85,7 @@ export default function AgencyRegisterForm(): JSX.Element {
             type="text"
             {...register('state')}
             placeholder="State"
-            errorMsg={errors.state?.message}
+            errorMsg={String(errors.state?.message)}
             containerClass={stateGroupClass}
           />
 
@@ -94,7 +93,7 @@ export default function AgencyRegisterForm(): JSX.Element {
             type="text"
             {...register('zipcode')}
             placeholder="Zipcode"
-            errorMsg={errors.zipcode?.message}
+            errorMsg={String(errors.zipcode?.message)}
             containerClass={zipcodeGroupClass}
           />
         </div>
@@ -104,7 +103,7 @@ export default function AgencyRegisterForm(): JSX.Element {
             type="text"
             {...register('country')}
             placeholder="Country"
-            errorMsg={errors.country?.message}
+            errorMsg={String(errors.country?.message)}
             containerClass={countryGroupClass}
           />
 
@@ -118,7 +117,7 @@ export default function AgencyRegisterForm(): JSX.Element {
                 )}
               />
             </div>
-            <p className={errorClass}>{errors.agencyPhone?.message}</p>
+            <p className={errorClass}>{String(errors.agencyPhone?.message)}</p>
           </div>
         </div>
 
@@ -126,7 +125,7 @@ export default function AgencyRegisterForm(): JSX.Element {
           <div className={inputContainerClass}>
             <textarea {...register('agencyBio')} placeholder="Agency Description" className={agencyBioInputClass} />
           </div>
-          <p className={errorClass}>{errors.agencyBio?.message}</p>
+          <p className={errorClass}>{String(errors.agencyBio?.message)}</p>
         </div>
 
         <input type="submit" className={submitBtnClass} value="Sign Up" />

@@ -25,9 +25,8 @@ export default function LoginForm(): JSX.Element {
   });
 
   // eslint-disable-next-line unicorn/consistent-function-scoping
-  const onSubmit = (data) => {
-    console.log(data);
-    loginSubmitBtnClick(data);
+  const onSubmit = async (data) => {
+    await loginSubmitBtnClick(data);
   };
 
   const testFunc = () => {
@@ -53,13 +52,18 @@ export default function LoginForm(): JSX.Element {
           </Link>
         </div>
 
-        <FormInput type="text" {...register('email')} placeholder="Email/Username" errorMsg={errors.email?.message} />
+        <FormInput
+          type="text"
+          {...register('email')}
+          placeholder="Email/Username"
+          errorMsg={String(errors.email?.message)}
+        />
 
         <FormInput
           type="password"
           {...register('password')}
           placeholder="Password"
-          errorMsg={errors.password?.message}
+          errorMsg={String(errors.password?.message)}
         />
 
         <input type="submit" className={submitBtnClass} value="Log In" />
