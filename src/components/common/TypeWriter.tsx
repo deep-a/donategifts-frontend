@@ -1,13 +1,13 @@
 export default class TypeWriter {
   private txtElement: Element;
 
-  private words: string[];
+  private readonly words: string[];
 
   private txt: string;
 
   private wordIndex: number;
 
-  private wait: number;
+  private readonly wait: number;
 
   private isDeleting: boolean;
 

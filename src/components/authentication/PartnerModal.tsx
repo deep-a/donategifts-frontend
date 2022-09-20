@@ -4,7 +4,7 @@ import {
   faBan,
   faCheckSquare,
   faEnvelope,
-  faExclamationTriangle,
+  faExclamationTriangle
 } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import {
@@ -16,7 +16,7 @@ import {
   modalCloseClass,
   modalContainerClass,
   modalTitleClass,
-  modalTitleContainerClass,
+  modalTitleContainerClass
 } from './AuthHelpers';
 
 interface IPartnerModalBody {

@@ -10,36 +10,36 @@ export default function Footer(): JSX.Element {
   }[] = [
     {
       link: '/contact',
-      text: t('common:contactUsHyperLink'),
+      text: t('common:contactUsHyperLink')
     },
     {
       link: '/mission',
-      text: t('common:missionHyperLink'),
+      text: t('common:missionHyperLink')
     },
     {
       link: '/howto',
-      text: t('common:howItWorksHyperLink'),
+      text: t('common:howItWorksHyperLink')
     },
     {
       link: '/team',
-      text: t('common:whoWeAreHyperLink'),
+      text: t('common:whoWeAreHyperLink')
     },
     {
       link: '/wishcards',
-      text: t('common:wishCardsHyperLink'),
+      text: t('common:wishCardsHyperLink')
     },
     {
       link: '/community',
-      text: t('common:communityHyperLink'),
+      text: t('common:communityHyperLink')
     },
     {
       link: '/terms',
-      text: t('common:termsHyperLink'),
+      text: t('common:termsHyperLink')
     },
     {
       link: '/faq',
-      text: t('common:faqHyperLink'),
-    },
+      text: t('common:faqHyperLink')
+    }
   ];
 
   return (

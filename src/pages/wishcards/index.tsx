@@ -6,8 +6,8 @@ import Card from '@/components/wishcard/Card/Card';
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'mission'])),
-    },
+      ...(await serverSideTranslations(locale, ['common', 'mission']))
+    }
   };
 }
 
@@ -17,8 +17,8 @@ const mockCards = [
     item: 'crayons',
     price: 25,
     interest: 'skating',
-    location: 'somewhere',
-  },
+    location: 'somewhere'
+  }
 ];
 
 export default function Index(): JSX.Element {

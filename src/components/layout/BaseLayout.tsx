@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 
 export default function BaseLayout({
   children,
-  pageTitle,
+  pageTitle
 }: {
   children: React.ReactNode;
   pageTitle: string;

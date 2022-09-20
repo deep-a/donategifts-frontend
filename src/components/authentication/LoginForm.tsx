@@ -10,7 +10,7 @@ import {
   OrClass,
   submitBtnClass,
   authBtnClass,
-  loginSubmitBtnClick,
+  loginSubmitBtnClick
 } from './AuthHelpers';
 import { FormInput } from './FormInput';
 
@@ -19,9 +19,9 @@ export default function LoginForm(): JSX.Element {
     register,
     handleSubmit,
 
-    formState: { errors },
+    formState: { errors }
   } = useForm({
-    resolver: loginResolver,
+    resolver: loginResolver
   });
 
   // eslint-disable-next-line unicorn/consistent-function-scoping

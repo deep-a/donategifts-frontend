@@ -1,14 +1,30 @@
-/* 
+/*
 -----------------------------
 Reusable Hero
 -----------------------------
 */
+h1 {
+  @include font-styling($font-heading, 3.4em, $navy, $medium);
+  text-transform: uppercase;
+}
+
+h2 {
+  @include font-styling($font-heading, 2.5em, $navy, $medium);
+  text-transform: uppercase;
+}
+
+h4 {
+  @include font-styling($font-body, 1.3rem);
+  padding-bottom: 0.5rem;
+}
+
 .hero {
     text-align: center;
     color: $white;
     h1 {
         @include font-styling($font-heading, 3.4em);
         text-transform: uppercase;
+        color: $white;
     }
     h4 {
         @include font-styling($font-body, 1.3rem);
@@ -19,9 +35,9 @@ Reusable Hero
     }
 }
 
-/* 
+/*
 -----------------------------
-Text Typing Effect 
+Text Typing Effect
 -----------------------------
 */
 .typing {

@@ -1,26 +1,24 @@
+import { readdir } from 'node:fs/promises';
+import { join } from 'node:path';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { UserConfig } from 'next-i18next';
 import BaseLayout from '@/components/layout/BaseLayout';
 import TypeWriter from '@/components/common/TypeWriter';
+import PartnerCarousel from '@/components/common/PartnerCarousel';
 
-export async function getStaticProps({ locale }: Record<string, string>): Promise<{
-  props: {
-    _nextI18Next: {
-      initialI18nStore: any;
-      userConfig: UserConfig;
-    };
-  };
-}> {
+export async function getStaticProps({ locale }: Record<string, string>) {
+  const images = await readdir(join(__dirname, '../../../public/assets/img/partnerLogos'));
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'mission'])),
-    },
+      ...(await serverSideTranslations(locale, ['common', 'mission', 'home'])),
+      images
+    }
   };
 }
 
-export default function Index(): JSX.Element {
+export default function Index({ images }): JSX.Element {
   useEffect(() => {
     const txtElement: HTMLElement = document.querySelector('.typing');
     const words = JSON.parse(txtElement.dataset.words);
@@ -55,9 +53,13 @@ export default function Index(): JSX.Element {
           </div>
         </div>
       </div>
+
+      <PartnerCarousel images={images} />
+
       <div className="wishcards">
         <h1>Become Our Secret Santa</h1>
       </div>
+
       <div className="wishcards">
         <h1>Donate School Supplies</h1>
       </div>

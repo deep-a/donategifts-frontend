@@ -15,7 +15,7 @@ import {
   radioClass,
   radioContainerClass,
   radioLabelContainer,
-  registerSubmitBtnClick,
+  registerSubmitBtnClick
 } from './AuthHelpers';
 import { FormInput } from './FormInput';
 
@@ -28,9 +28,9 @@ export default function RegisterForm(props: IRegisterFormProps): JSX.Element {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm({
-    resolver: registerResolver,
+    resolver: registerResolver
   });
   const router = useRouter();
 

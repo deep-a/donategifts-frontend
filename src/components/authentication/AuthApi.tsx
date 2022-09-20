@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } f
 if (getApps().length === 0) {
   initializeApp({
     apiKey: process.env.APP_API_KEY,
-    authDomain: 'donategifts.firebaseapp.com',
+    authDomain: 'donategifts.firebaseapp.com'
   });
 }
 

@@ -10,12 +10,12 @@ const registerFormSchema = object().shape({
   passwordConfirm: string().test('password-match', 'Passwords do not match', function match(value) {
     return this.parent.password === value;
   }),
-  userRole: string().required('Please select a User Role').nullable(),
+  userRole: string().required('Please select a User Role').nullable()
 });
 
 const loginFormSchema = object().shape({
   email: string().required('Email is required').email(),
-  password: string().required('Password is required'),
+  password: string().required('Password is required')
 });
 
 const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
@@ -31,7 +31,7 @@ const AgencyRegisterFormSchema = object().shape({
   zipcode: string().matches(zipRegex, 'Please enter a valid 5 digit zipcode').required('Zipcode is Required'),
   country: string().required('Country is Required'),
   agencyPhone: string().matches(phoneRegex, 'Please enter a valid Phone Number').required('Phone number is Required'),
-  agencyBio: string().required('Agency Description is Required'),
+  agencyBio: string().required('Agency Description is Required')
 });
 
 export const registerResolver = yupResolver(registerFormSchema);

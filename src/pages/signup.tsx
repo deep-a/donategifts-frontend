@@ -6,8 +6,8 @@ import Register from '@/components/authentication/Register';
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'mission'])),
-    },
+      ...(await serverSideTranslations(locale, ['common', 'mission']))
+    }
   };
 }
 

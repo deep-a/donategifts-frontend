@@ -19,7 +19,7 @@ import {
   countryGroupClass,
   phoneGroupClass,
   formGroupClass,
-  agencyBioInputClass,
+  agencyBioInputClass
 } from './AuthHelpers';
 import { FormInput } from './FormInput';
 
@@ -29,9 +29,9 @@ export default function AgencyRegisterForm(): JSX.Element {
     handleSubmit,
     control,
 
-    formState: { errors },
+    formState: { errors }
   } = useForm({
-    resolver: registerAgencyResolver,
+    resolver: registerAgencyResolver
   });
   const router = useRouter();
 

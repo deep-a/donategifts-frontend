@@ -33,7 +33,6 @@
         "ignoreReadBeforeAssign": false
       }
     ],
-    "no-lonely-if": "error",
     "import/no-unresolved": "off",
     "no-underscore-dangle": 0,
     "object-curly-spacing": 0,
@@ -101,6 +100,7 @@
     ],
     "unicorn/prevent-abbreviations": "off",
     "unicorn/filename-case": "off",
+    "unicorn/prefer-module": "off",
     "react/jsx-props-no-spreading": 0,
     "react/jsx-indent-props": 0,
     "react/jsx-filename-extension": "off",

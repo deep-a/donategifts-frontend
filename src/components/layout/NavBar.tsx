@@ -16,25 +16,25 @@ export default function NavBar(): JSX.Element {
     items: [
       {
         text: t('common:wishCardsHyperLink'),
-        link: '/wishcards',
+        link: '/wishcards'
       },
       {
         text: t('common:missionHyperLink'),
-        link: '/mission',
+        link: '/mission'
       },
       {
         text: t('common:howToHyperLink'),
-        link: '/howto',
+        link: '/howto'
       },
       {
         text: t('common:signUpHyperLink'),
-        link: '/signup',
+        link: '/signup'
       },
       {
         text: t('common:loginHyperLink'),
-        link: '/login',
-      },
-    ],
+        link: '/login'
+      }
+    ]
   };
 
   return (
