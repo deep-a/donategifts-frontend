@@ -95,10 +95,37 @@ textarea {
     -o-transition: all 0.2s ease-in-out;
 }
 
+%btn-sm {
+    padding: 1rem 2rem;
+    font-size: medium;
+    margin: 10px;
+    line-height: 1.2em;
+    transition: all 0.2s ease-in-out;
+    border: 0.15rem solid transparent;
+    display: inline-flex;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    outline: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
 %hover-navy {
     background-color: $navy;
     color: $white !important;
     border: 0.15rem solid $white;
+    text-decoration: none;
+}
+
+%hover-white {
+    background-color: $white;
+    color: $navy !important;
+    border: 0.15rem solid $navy;
     text-decoration: none;
 }
 
