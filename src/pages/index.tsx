@@ -57,7 +57,9 @@ export default function Index({ images }): JSX.Element {
         </div>
       </div>
 
-      <PartnerCarousel images={images} />
+      <div className="carousel">
+        <PartnerCarousel images={images} />
+      </div>
 
       <div className="wishcards">
         <h1>Become Our Secret Santa</h1>
