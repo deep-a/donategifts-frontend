@@ -3,22 +3,25 @@ import { join } from 'node:path';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import BaseLayout from '@/components/layout/BaseLayout';
 import TypeWriter from '@/components/common/TypeWriter';
 import PartnerCarousel from '@/components/common/PartnerCarousel';
+import InfoBlock from '@/components/common/InfoBlock';
 
 export async function getStaticProps({ locale }: Record<string, string>) {
   const images = await readdir(join(__dirname, '../../../public/assets/img/partnerLogos'));
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'mission', 'home'])),
+      ...(await serverSideTranslations(locale, ['common', 'home'])),
       images
     }
   };
 }
 
 export default function Index({ images }): JSX.Element {
+  const { t } = useTranslation('home');
   useEffect(() => {
     const txtElement: HTMLElement = document.querySelector('.typing');
     const words = JSON.parse(txtElement.dataset.words);
@@ -64,34 +67,12 @@ export default function Index({ images }): JSX.Element {
         <h1>Donate School Supplies</h1>
       </div>
 
-      <div className="thanks custom-wrapper py-5">
-        <div className="container" id="about">
-          <h1 className="mb-3">We Need Your Help</h1>
-          <div className="row">
-            <div className="col-md-6 order-1 p-5">
-              <img
-                src="/assets/img/kids-cover.jpg"
-                alt="donation drop off near me"
-                className="img-fluid grn-box"
-                loading="lazy"
-              />
-            </div>
-            <div className="col-md-6 text-center py-5 px-3">
-              <p className="text-left subtext quick-font">
-                500,000+ kids spend time in foster care each year and 4.2M+ youth are homeless in the United States. For
-                many of them, Christmas time can be sad and lonely because they are undergoing stressful situations.
-                With your generosity and kindness, we are able to provide a moment of happiness to the kids who are in
-                crisis. By creating this platform, we wish to provide effortless and convenient ways to share the joy of
-                the holidays. <br />
-                Your gifts make it possible to bring happiness to the kids.
-              </p>
-              <a href="/contact" className="btn-white-navy-lg">
-                How To Contact Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <InfoBlock
+        heading={t('infoblock.heading')}
+        content={t('infoblock.content')}
+        button={{ link: '/contact', text: t('infoblock.button') }}
+        image={{ link: '/assets/img/kids-cover.jpg', alt: t('infoblock.imageAlt') }}
+      />
     </BaseLayout>
   );
 }
