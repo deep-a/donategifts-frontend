@@ -1,87 +1,85 @@
 h1 {
-    @include font-styling($font-heading);
-    margin-bottom: 0rem;
-    color: $navy;
+  @include font-styling($font-heading);
+  color: $navy;
 }
 
 h2 {
-    @include font-styling($font-heading);
-    margin-bottom: 0rem;
-    color: $navy;
+  @include font-styling($font-heading);
+  color: $navy;
 }
 
 h3 {
-    @include font-styling($font-heading);
-    margin-bottom: 0rem;
-    color: $yellow;
+  @include font-styling($font-heading);
+  color: $yellow;
 }
 
 #donor {
-    background-color: #FFF6ED;
+    background-color: tint-color($cream, 50);
 }
 
 .heading-step {
-    font-size: x-large;
-    font-weight: 300;
+  font-size: x-large;
+  font-weight: 300;
 }
 
 .body-step {
-    @include font-styling($font-body);
-    font-weight: 300;
-	font-size: medium;
-	line-height: 2.1em;
+  @include font-styling($font-body);
+  font-weight: 300;
+  font-size: medium;
+  line-height: 2.1em;
 }
 
 .btn-howto {
-    @extend %btn-lg;
-    background-color: $navy;
-    color: $white !important;
-    &:hover {
-        @extend %hover-white;
-    }
+  @extend %btn-lg;
+  background-color: $navy;
+  color: $white !important;
+  text-decoration: none;
+  &:hover {
+    @extend %hover-white;
+  }
 }
 
 .btn-start {
-    @extend %btn-sm;
-    background-color: $navy;
-    color: $white !important;
-    &:hover {
-        @extend %hover-white;
-    }
+  @extend %btn-sm;
+  background-color: $navy;
+  color: $white !important;
+  &:hover {
+    @extend %hover-white;
+  }
 }
 
 .card-container {
-	@include make-row();
-    padding: $spacer * 1.5;
-    justify-content: center;
+  @include make-row();
+  padding: $spacer * 1.5;
+  justify-content: center;
 }
 
 .text-card {
-    padding-top: $spacer;
-    padding-left: $spacer !important;
-    padding-right: $spacer !important;
+  padding-top: $spacer;
+  padding-left: $spacer !important;
+  padding-right: $spacer !important;
 
-    @include make-col-ready();
+  @include make-col-ready();
 
-    @include media-breakpoint-up(sm) {
-        @include make-col(6);
-    }
-    @include media-breakpoint-up(lg) {
-        @include make-col(5);
-    }
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(5);
+  }
 }
 
 .image-card {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    @include make-col-ready();
+  @include make-col-ready();
 
-    @include media-breakpoint-up(sm) {
-        @include make-col(6);
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
 
-    }
-    @include media-breakpoint-up(lg) {
-        @include make-col(5);
-    }
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(5);
+  }
 }

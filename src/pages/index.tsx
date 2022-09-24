@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import BaseLayout from '@/components/layout/BaseLayout';
-import TypeWriter from '@/components/common/TypeWriter';
+import TypeWriter from '@/common/utils/TypeWriter';
 import PartnerCarousel from '@/components/common/PartnerCarousel';
 import InfoBlock from '@/components/common/InfoBlock';
 
@@ -31,8 +31,8 @@ export default function Index({ images }): JSX.Element {
   });
 
   return (
-    <BaseLayout pageTitle="Donate Gifts | School Supply Donation, Holiday Gift Donation, Virtual Toy Drive For Foster Care And Children In Crisis">
-      <div className="hero flex-center" id="home-bg">
+    <BaseLayout pageTitle={t('pageTitle')}>
+      <div className="hero flex-center img-fluid" id="home-bg">
         <div className="grid auto-rows-auto">
           <div className="auto-cols-auto">
             <h1>
@@ -70,10 +70,10 @@ export default function Index({ images }): JSX.Element {
       </div>
 
       <InfoBlock
-        heading={t('infoblock.heading')}
-        content={t('infoblock.content')}
-        button={{ link: '/contact', text: t('infoblock.button') }}
-        image={{ link: '/assets/img/kids-cover.jpg', alt: t('infoblock.imageAlt') }}
+        heading={t('infoBlock.heading')}
+        content={t('infoBlock.content')}
+        button={{ link: '/contact', text: t('infoBlock.button') }}
+        image={{ link: '/assets/img/kids-cover.jpg', alt: t('infoBlock.imageAlt') }}
       />
     </BaseLayout>
   );

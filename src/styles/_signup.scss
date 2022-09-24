@@ -1,0 +1,20 @@
+#sign-up {
+  background: url("/assets/img/gift-white-bg.jpeg") no-repeat;
+  background-size: cover;
+
+  #agency-switch {
+    &.form-check-input {
+      &:checked {
+        background-color: $secondary;
+        border-color: $secondary;
+      }
+    }
+  }
+
+  .container {
+    // @TODO: remove this once we have the width variables
+    width: 50%;
+    background: linear-gradient(45deg, rgba(255, 95, 109, 0.9), rgba(255, 195, 113, 1));
+    border-radius: 15px;
+  }
+}

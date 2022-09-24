@@ -1,16 +1,20 @@
 {
-  "wishCardsHyperLink": "Wish Cards",
-  "missionHyperLink": "Mission",
-  "howToHyperLink": "How to",
-  "signUpHyperLink": "Sign up",
-  "loginHyperLink": "Login",
-  "contactUsHyperLink": "Contact Us",
-  "howItWorksHyperLink": "How it works",
-  "whoWeAreHyperLink": "Who we are",
-  "communityHyperLink": "Community",
-  "termsHyperLink": "Terms",
-  "faqHyperLink": "FAQ",
-  "supportOurCause": "How To Support Our Cause",
-  "socialMedia": "Social Media",
-  "allRightsReserved": "All rights reserverd"
+  "navBar": {
+    "wishCardsHyperLink": "Wish Cards",
+    "missionHyperLink": "Mission",
+    "howToHyperLink": "How to",
+    "signUpHyperLink": "Sign up",
+    "loginHyperLink": "Login"
+  },
+  "footer": {
+    "contactUsHyperLink": "Contact Us",
+    "howItWorksHyperLink": "How it works",
+    "whoWeAreHyperLink": "Who we are",
+    "communityHyperLink": "Community",
+    "termsHyperLink": "Terms",
+    "faqHyperLink": "FAQ",
+    "supportOurCause": "Support Our Cause",
+    "socialMedia": "Social Media",
+    "allRightsReserved": "All rights reserverd"
+  }
 }

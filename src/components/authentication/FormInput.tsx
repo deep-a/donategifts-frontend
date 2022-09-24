@@ -1,21 +1,20 @@
 import React from 'react';
-import { inputContainerClass, inputClass, errorClass, inputError, inputOk } from './AuthHelpers';
+import { Form } from 'react-bootstrap';
+import { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
 
 interface InputProps {
-  errorMsg: string;
   placeholder: string;
   name: string;
   type: string;
+  errorMsg?: string | FieldError | Merge<FieldError, FieldErrorsImpl<unknown>>;
   containerClass?: string;
 }
 
-const FormInput = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => (
-  <div className={props.containerClass}>
-    <div className={`${inputContainerClass} ${props.errorMsg !== '' ? inputError : inputOk}`}>
-      <input type={props.type} name={props.name} ref={ref} placeholder={props.placeholder} className={inputClass} />
-    </div>
-    {props.errorMsg !== '' && <p className={errorClass}>{props.errorMsg}</p>}
-  </div>
-));
-
-export { FormInput };
+export const FormInput = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  return (
+    <Form.Group className={props.containerClass}>
+      <Form.Control size="lg" type={props.type} name={props.name} ref={ref} placeholder={props.placeholder} />
+      {props.errorMsg ? <p className="text-danger">{props.errorMsg.toString()}</p> : ''}
+    </Form.Group>
+  );
+});

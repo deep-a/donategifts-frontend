@@ -1,0 +1,66 @@
+{
+  "pageTitle": "How does Donategifts work?",
+  "header": {
+    "title": "How Does It Work For",
+    "donors": "Donors",
+    "partners": "Partners"
+  },
+  "donor": {
+    "header": "How do I send gifts as a donor?",
+    "steps": {
+      "1": {
+        "header": "Step 1",
+        "headingStep": "Choose a wish card to 'Donate Gift'",
+        "bodyStep": "Each wish card is for a different foster child, created and managed by our certified foster agency partner. Browse the wishes and become a Secret Santa to make their wish come true. <br /> Click the ‘Donate Gift’ button on the card or on their wish page to begin the donation process.",
+        "image": "wishcard-click.svg"
+      },
+      "2": {
+        "header": "Step 2",
+        "headingStep": "Wish donation secure checkout",
+        "bodyStep": "Your payment transaction is powered by Stripe, which is audited by a PCI-certified auditor and is certified to PCI Service Provider Level 1. This is the most stringent level of certification available in the payments industry.<br />Simply enter the name on card, card number, expiration date, CVC (security code 3-4 digits), and the zipcode.<br />That's it! You will be notified after confirmed payment with the donation and shipping details.",
+        "image": "howto-checkout.svg"
+      },
+      "3": {
+        "header": "Step 3",
+        "headingStep": "Get 100% tax deductible receipt",
+        "bodyStep": "After checkout, we will deliver the gift to each managing foster agency. All kids and youth are under our partner agencies' care and the agency staff will collect and distribute the shipped wish items.<br />We don't have a drop-off site because we handle all shipping orders to make the donation experience more easy and efficient for you.<br />You will receive a tax-exempt receipt, shipping details, and delivery proof in the confirmation email. If our partner agency permits, you will also get a thank you message and photos from the child.",
+        "image": "howto-gift.svg"
+      }
+    },
+    "closing": {
+      "header": "Ready to make the foster kids happy?",
+      "button": "Start Browsing Wishes"
+    }
+  },
+  "partner": {
+    "header": "How do I create wishes as a partner?",
+    "steps": {
+      "1": {
+        "header": "Step 1",
+        "headingStep": "Register as a partner",
+        "bodyStep": "We accept partnerships with state-certified foster care organizations, adoption agencies, licensed domestic foster homes, and other 501(c)(3) non-profit organizations that help homeless youth and children at risk.",
+        "image": "register.svg"
+      },
+      "2": {
+        "header": "Step 2",
+        "headingStep": "Become verified",
+        "bodyStep": "Agency verification may take up to 1-2 business days due to our security regulations. You will be notified once your agency account is verified."
+      },
+      "3": {
+        "header": "Step 3",
+        "headingStep": "Create wish cards",
+        "bodyStep": "Create wish cards by filling out a simple form. Choose wish items from our suggested list, or search and add the product link if the child wishes for a specific item. Your submission will be created as a draft and will be published after our review process."
+      },
+      "4": {
+        "header": "Step 4",
+        "headingStep": "Get notified",
+        "bodyStep": "That’s it! You will be notified when your wish cards are published, as well as when gifts are on their way. More questions? Check out the FAQs.",
+        "image": "notified.svg"
+      }
+    },
+    "closing": {
+      "header": "Ready to become our non profit partner?",
+      "button": "Register your agency"
+    }
+  }
+}

@@ -6,7 +6,7 @@ import BaseLayout from '@/components/layout/BaseLayout';
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['mission']))
+      ...(await serverSideTranslations(locale, ['common', 'mission']))
     }
   };
 }
@@ -15,10 +15,10 @@ export default function Mission(): JSX.Element {
   const { t } = useTranslation('mission');
 
   return (
-    <BaseLayout pageTitle="Mission">
+    <BaseLayout pageTitle={t('pageTitle')}>
       <div className="flex items-center justify-center min-h-4 bg-mission bg-no-repeat bg-cover bg-center">
         <div className="text-center text-white">
-          <h1 className="text-6xl font-crayoncool uppercase">{t('pageTitle')}</h1>
+          <h1 className="text-6xl font-crayoncool uppercase">{t('pageHeader')}</h1>
           <h4 className="text-2xl font-quicksand font-bold">{t('pageSubTitle')}</h4>
         </div>
       </div>
@@ -27,15 +27,7 @@ export default function Mission(): JSX.Element {
           <div className="lg:w-3/5 md:pr-4 sm:pl-4">
             <h3 className="font-crayoncool text-3xl font-light">{t('topSectionTitle')}</h3>
             <p className="font-bold font-quicksand mt-3">{t('topSectionSubTitle')}</p>
-            <p className="mt-3 font-quicksand font-light leading-8 text-justify">
-              The DonateGifts project was founded and established in Chicago in August, 2020. We partner with over 35
-              certified foster care agencies all around the United States. And with your help, we collectively send
-              holiday and birthday gifts to foster children and homeless youth. Our verified partner agencies create and
-              manage wish cards for the kids under their care. Each wish card is unique and personal and linked with the
-              gift item they want to receive. Donation is directly linked to the product sold on Amazon, and after your
-              confirmed payment, we ship the gift to each managing foster agency. The agency staffs or social workers
-              collect and distribute the delivered items to each kid.
-            </p>
+            <p className="mt-3 font-quicksand font-light leading-8 text-justify">{t('topSectionBody')}</p>
           </div>
         </div>
         <div className="lg:w-1/2 text-center flex justify-start pl-28 items-center">

@@ -3,7 +3,7 @@
   font-size: 1rem;
   color: $white;
   text-align: center;
-  background: $footerBackground;
+  background: $gray;
 
   &_container {
     width: 100%;
@@ -14,10 +14,10 @@
   }
 
   &_paypal {
-    color: $footerPayPal;
+    color: $yellow;
     text-decoration: none;
     a:hover {
-      color: $footerPayPal;
+      color: $yellow;
       text-decoration: underline;
     }
   }
@@ -32,7 +32,7 @@
     &_button {
       text-decoration: none;
       padding-right: 6px;
-      background-color: transparent;  
+      background-color: transparent;
       color: white;
       border: none;
       outline: none;

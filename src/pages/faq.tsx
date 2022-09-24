@@ -22,7 +22,7 @@ export default function Faq(): JSX.Element {
   const questions = t('questions', { returnObjects: true }) as Translations;
 
   return (
-    <BaseLayout pageTitle="FAQ Page">
+    <BaseLayout pageTitle={t('pageTitle')}>
       <div className="d-flex justify-content-center text-center w-100">
         <div className="my-4">
           <h1 className="mb-3 mt-5">{t('heading')}</h1>

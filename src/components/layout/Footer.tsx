@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'next-i18next';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Footer(): JSX.Element {
   const { t } = useTranslation('common');
@@ -10,35 +12,35 @@ export default function Footer(): JSX.Element {
   }[] = [
     {
       link: '/contact',
-      text: t('common:contactUsHyperLink')
+      text: t('footer.contactUsHyperLink')
     },
     {
       link: '/mission',
-      text: t('common:missionHyperLink')
+      text: t('navBar.missionHyperLink')
     },
     {
       link: '/howto',
-      text: t('common:howItWorksHyperLink')
+      text: t('footer.howItWorksHyperLink')
     },
     {
       link: '/team',
-      text: t('common:whoWeAreHyperLink')
+      text: t('footer.whoWeAreHyperLink')
     },
     {
       link: '/wishcards',
-      text: t('common:wishCardsHyperLink')
+      text: t('navBar.wishCardsHyperLink')
     },
     {
       link: '/community',
-      text: t('common:communityHyperLink')
+      text: t('footer.communityHyperLink')
     },
     {
       link: '/terms',
-      text: t('common:termsHyperLink')
+      text: t('footer.termsHyperLink')
     },
     {
       link: '/faq',
-      text: t('common:faqHyperLink')
+      text: t('footer.faqHyperLink')
     }
   ];
 
@@ -46,7 +48,6 @@ export default function Footer(): JSX.Element {
     <div className="footer_main">
       <div className="footer_main_container">
         <p className="footer_main_paypal">
-          <i className="fa fa-heart mt-1" aria-hidden />
           <a
             href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LA5DA2K2C8HLW"
             rel="noreferrer"
@@ -54,9 +55,10 @@ export default function Footer(): JSX.Element {
             target="_blank"
             className="footer_main_paypal"
           >
-            <span>{t('common:supportOurCause')}</span>
+            <FontAwesomeIcon fixedWidth={true} icon={faHeart} />
+            <span className="mx-2">{t('footer.supportOurCause')}</span>
+            <FontAwesomeIcon fixedWidth={true} icon={faHeart} />
           </a>
-          <i className="fa fa-heart" aria-hidden />
         </p>
         <div className="footer_main_row">
           <div>

@@ -5,7 +5,6 @@ import { useTranslation } from 'next-i18next';
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 
 export default function NavBar(): JSX.Element {
-  const expand = 'lg';
   const { t } = useTranslation('common');
   const navItems: {
     items: {
@@ -15,30 +14,30 @@ export default function NavBar(): JSX.Element {
   } = {
     items: [
       {
-        text: t('common:wishCardsHyperLink'),
+        text: t('navBar.wishCardsHyperLink'),
         link: '/wishcards'
       },
       {
-        text: t('common:missionHyperLink'),
+        text: t('navBar.missionHyperLink'),
         link: '/mission'
       },
       {
-        text: t('common:howToHyperLink'),
+        text: t('navBar.howToHyperLink'),
         link: '/howto'
       },
       {
-        text: t('common:signUpHyperLink'),
+        text: t('navBar.signUpHyperLink'),
         link: '/signup'
       },
       {
-        text: t('common:loginHyperLink'),
+        text: t('navBar.loginHyperLink'),
         link: '/login'
       }
     ]
   };
 
   return (
-    <Navbar bg="light" expand={expand} className="nav-main">
+    <Navbar bg="light" expand="lg" className="nav-main">
       <Container>
         <Navbar.Brand>
           <Link href="/">
@@ -54,10 +53,10 @@ export default function NavBar(): JSX.Element {
           </Link>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+        <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
         <Navbar.Offcanvas
-          id={`offcanvasNavbar-expand-${expand}`}
-          aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+          id="offcanvasNavbar-expand-lg"
+          aria-labelledby="offcanvasNavbarLabel-expand-lg"
           placement="end"
         >
           <Offcanvas.Header closeButton></Offcanvas.Header>

@@ -1,26 +1,6 @@
 .nav-main {
-    background-color: transparent;
-    padding-bottom: 0;
-    margin-bottom: -5px;
-    font-family: $font-body !important;
-}
-//below not used anymore -remove later
-/*
-    pc screen 
-    --------------------------------*/
-@media screen and (min-width: 992px) {
-    .site-navigation ul {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        padding: 1.4rem 0;
-        overflow: auto;
-        background: transparent;
-        .nav-link a {
-            padding: 0;
-        }
-    }
+  background-color: transparent;
+  padding-bottom: 0;
+  margin-bottom: -5px;
+  font-family: $font-body !important;
 }
