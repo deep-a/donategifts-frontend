@@ -4,7 +4,6 @@
   },
   "plugins": [
     "prettier",
-    "@typescript-eslint",
     "import",
     "unicorn"
   ],
@@ -13,9 +12,6 @@
       "error"
     ],
     "max-len": "off",
-    "import/order": "error",
-    "import/first": "error",
-    "import/no-mutable-exports": "error",
     "no-debugger": "error",
     "no-console": [
       "warn",
@@ -33,7 +29,6 @@
         "ignoreReadBeforeAssign": false
       }
     ],
-    "import/no-unresolved": "off",
     "no-underscore-dangle": "off",
     "object-curly-spacing": "off",
     "prefer-object-spread": "error",
@@ -54,32 +49,15 @@
       "LabeledStatement",
       "WithStatement"
     ],
-    "require-atomic-updates": 0,
-    "no-await-in-loop": 0,
-    "class-methods-use-this": 0,
-    "no-useless-constructor": 0,
-    "import/prefer-default-export": 0,
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "args": "all",
-        "argsIgnorePattern": "^_"
-      }
-    ],
-    "@typescript-eslint/no-useless-constructor": 0,
-    "@typescript-eslint/no-parameter-properties": 0,
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        "selector": "interface",
-        "format": [
-          "PascalCase"
-        ]
-      }
-    ],
-    "@typescript-eslint/interface-name-prefix": "off",
-    "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/explicit-member-accessibility": 0,
+    "require-atomic-updates": "off",
+    "no-await-in-loop": "off",
+    "class-methods-use-this": "off",
+    "no-useless-constructor": "off",
+    "import/order": "error",
+    "import/first": "error",
+    "import/no-mutable-exports": "error",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
     "indent": [
       "error",
       2,
@@ -92,51 +70,37 @@
       "ignorePackages",
       {
         "js": "never",
-        "mjs": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
+        "jsx": "never"
       }
     ],
     "unicorn/prevent-abbreviations": "off",
     "unicorn/filename-case": "off",
     "unicorn/prefer-module": "off",
     "unicorn/consistent-function-scoping": "off",
-    "react/jsx-props-no-spreading": 0,
-    "react/jsx-indent-props": 0,
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-indent-props": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-indent": "off",
-    "react/no-unused-prop-types": 0,
-    "react/destructuring-assignment": 0
+    "react/no-unused-prop-types": "off",
+    "react/destructuring-assignment": "off",
+    "react/require-default-props": "off"
   },
   "env": {
-    "jest": false,
-    "mocha": false,
     "browser": true,
     "node": true
   },
   "extends": [
-    "airbnb-typescript",
+    "airbnb",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:unicorn/recommended",
     "prettier"
   ],
   "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".tsx"
-      ]
-    },
     "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true
-      },
       "node": {
         "extensions": [
-          ".ts",
-          ".tsx"
+          ".js",
+          ".jsx"
         ]
       }
     },
