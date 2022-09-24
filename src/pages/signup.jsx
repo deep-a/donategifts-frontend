@@ -14,7 +14,7 @@ export async function getStaticProps({ locale }) {
 export default function SignUp() {
   return (
     <BaseLayout pageTitle="Sign Up">
-      <div id="sign-up" className="py-5">
+      <div id="sign-up" className="py-5 center-elements">
         <SignUpForm />
       </div>
     </BaseLayout>

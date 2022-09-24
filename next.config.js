@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
+const path = require('node:path');
 const { i18n } = require('./next-i18next.config');
 
 function getAPIHost() {
@@ -16,7 +15,6 @@ function getAPIHost() {
   return 'https://donate-gifts.com/website-api';
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 module.exports = {
   env: {
     API_ENDPOINT: getAPIHost()

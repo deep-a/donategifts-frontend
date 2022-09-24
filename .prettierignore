@@ -1,8 +1,0 @@
-/.github
-/.husky
-/.vscode
-/node_modules
-/.next
-/__tests__
-*.md
-*.json

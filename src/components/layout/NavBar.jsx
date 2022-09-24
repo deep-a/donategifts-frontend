@@ -21,10 +21,6 @@ export default function NavBar() {
         link: '/howto'
       },
       {
-        text: t('navBar.signUpHyperLink'),
-        link: '/signup'
-      },
-      {
         text: t('navBar.loginHyperLink'),
         link: '/login'
       }

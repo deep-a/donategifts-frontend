@@ -1,6 +1,6 @@
 .nav-main {
+  @include font-styling($font-body);
   background-color: transparent;
   padding-bottom: 0;
   margin-bottom: -5px;
-  font-family: $font-body !important;
 }

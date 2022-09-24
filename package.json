@@ -15,7 +15,7 @@
   "scripts": {
     "build": "next build",
     "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
-    "lint": "eslint --ext .js,.jsx --ignore-path .eslintignore src/",
+    "lint": "eslint --ext .js,.jsx src/",
     "start": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next start",
     "test": "echo 'not configured'",
     "test:coverage": "echo 'not configured'",
@@ -28,7 +28,6 @@
     "@fortawesome/free-solid-svg-icons": "6.2.0",
     "@fortawesome/react-fontawesome": "0.2.0",
     "@hookform/resolvers": "2.9.8",
-    "autoprefixer": "10.4.11",
     "axios": "0.27.2",
     "bootstrap": "5.2.1",
     "cross-env": "7.0.3",
@@ -64,7 +63,7 @@
     "prettier": "2.7.1"
   },
   "lint-staged": {
-    "*.{.jsx,.js}": "eslint"
+    "*.{.jsx,.js}": "eslint --ext .js,.jsx src/"
   },
   "engines": {
     "node": "18"

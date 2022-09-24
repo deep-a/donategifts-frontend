@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import { Button, Container, Form } from 'react-bootstrap';
+import { Container, Form } from 'react-bootstrap';
 import { registerResolver } from '@common/helper/FormHelper';
 import { FormInput } from '@components/authentication/FormInput';
 import { registerSubmit } from '@common/authentication/AuthenticationApi';
@@ -30,7 +30,7 @@ export default function SignUpForm() {
   const toggleModal = () => console.log('implement modal toggle');
 
   return (
-    <Container className="p-md-5">
+    <Container className="p-md-5 w-50">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormInput
           containerClass="my-5"
@@ -80,9 +80,11 @@ export default function SignUpForm() {
           onClick={toggleModal}
         />
 
-        <Button variant="primary" size="lg" type="submit">
-          Sign Up
-        </Button>
+        <div className="center-elements">
+          <button type="submit" className="btn-navy-white-lg">
+            Sign Up
+          </button>
+        </div>
       </Form>
     </Container>
   );

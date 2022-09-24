@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 
 export const FormInput = React.forwardRef((props, ref) => (
   <Form.Group className={props.containerClass}>
-    <Form.Control size="lg" type={props.type} name={props.name} ref={ref} placeholder={props.placeholder} />
+    <Form.Control
+      id={props.name}
+      size="lg"
+      type={props.type}
+      name={props.name}
+      ref={ref}
+      placeholder={props.placeholder}
+    />
     {props.errorMsg ? <p className="text-danger">{props.errorMsg.toString()}</p> : ''}
   </Form.Group>
 ));

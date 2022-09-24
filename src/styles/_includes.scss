@@ -43,7 +43,7 @@
 @import "node_modules/bootstrap/scss/modal";
 // @import "node_modules/bootstrap/scss/tooltip";
 @import "node_modules/bootstrap/scss/popover";
- @import "node_modules/bootstrap/scss/carousel";
+@import "node_modules/bootstrap/scss/carousel";
 @import "node_modules/bootstrap/scss/spinners";
 // @import "node_modules/bootstrap/scss/offcanvas";
 // @import "node_modules/bootstrap/scss/placeholders";
@@ -57,14 +57,11 @@
 
 
 // @TODO: revisit this section here and remove/rework what we don't need anymore
-@import "card";
-@import "fonts";
-@import "footer";
-@import "home";
-@import "nav";
-@import "utils";
-@import "wishcards";
-@import 'howto';
-@import "faq";
-@import "infoblock";
-@import "signup";
+@import "components/layout/footer";
+@import "components/layout/nav";
+@import "components/common/infoblock";
+@import "pages/home";
+@import "pages/howto";
+@import "pages/faq";
+@import "pages/signup";
+@import "pages/wishcards/wishcards";
