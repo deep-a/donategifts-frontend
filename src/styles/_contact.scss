@@ -1,0 +1,57 @@
+#contact {
+  h2 {
+    @include font-styling($font-heading, 2rem, $red, $medium);
+  }
+  p{
+    @include font-styling($font-body, $medium);
+  }
+  a{
+    @include font-styling($font-body, 1rem, $red, $bold);
+    text-decoration: none;
+    &:hover{
+      @include font-styling($font-body, 1rem, $red, $bold);
+      text-decoration: underline;
+    }
+  }
+  //Submit button styles.
+  button{
+    width: 20rem;
+    height: 3rem;
+    background: white;
+    @include font-styling($font-body, 1.5rem, $red, $medium);
+    border: none;
+
+    &:hover{
+      background: $yellow;
+      @include font-styling($font-body, 1.5rem, $white, $bold);
+    }
+  }
+}
+
+.contact-form-wrapper{
+  background: linear-gradient(45deg, rgba(255, 95, 109, 0.9), rgba(255, 195, 113, 1));
+  border-radius: 15px;
+  padding: 40px;
+  width: 100%;
+}
+
+//Hide form labels.
+.contact-label{
+  display: none;
+}
+
+//Add white-space btwn first 2 inputs & take full width on smaller screens.
+#contact-form-name, #contact-form-email{
+  width: 49.25%;
+  @include media-breakpoint-down(md){
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+//Message box resize disabled.
+.contact-form-message {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  resize: none;
+}
