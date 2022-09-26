@@ -1,0 +1,16 @@
+.nav-main {
+  @include font-styling($font-body);
+  background-color: transparent;
+  padding-bottom: 0;
+  margin-bottom: -5px;
+
+}
+
+.modal-content {
+  background: linear-gradient(45deg, $red, $yellow);
+  .modal-dialog {
+    .modal-content {
+      background: $white;
+    }
+  }
+}

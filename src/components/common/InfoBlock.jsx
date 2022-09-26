@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Button, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 export default function InfoBlock({ heading, content, button, image }) {
@@ -10,16 +10,18 @@ export default function InfoBlock({ heading, content, button, image }) {
         <h2>{heading}</h2>
         <div className="row mt-5">
           <div className="col-md-6">
-            <p className="text-start" dangerouslySetInnerHTML={{ __html: content }} />
+            <p className="text-md-start" dangerouslySetInnerHTML={{ __html: content }} />
             {button && (
               <Link href={button.link}>
-                <Button className="btn btn-lg btn-primary">{button.text}</Button>
+                <button type="button" className="btn-orange-navy-lg">
+                  {button.text}
+                </button>
               </Link>
             )}
           </div>
           {image && (
             <div className="col-md-6">
-              <Image alt={image.alt} src={image.link} loading="lazy" className="img-fluid" />
+              <Image alt={image.alt} src={image.link} loading="lazy" className="img-fluid mw-90" />
             </div>
           )}
         </div>

@@ -77,13 +77,15 @@
     "unicorn/filename-case": "off",
     "unicorn/prefer-module": "off",
     "unicorn/consistent-function-scoping": "off",
+    "unicorn/prefer-ternary": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-indent-props": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-indent": "off",
     "react/no-unused-prop-types": "off",
     "react/destructuring-assignment": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   },
   "env": {
     "browser": true,

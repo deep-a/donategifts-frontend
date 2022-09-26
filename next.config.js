@@ -1,24 +1,23 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
+const path = require('node:path');
 const { i18n } = require('./next-i18next.config');
 
 function getAPIHost() {
   const env = process.env.NODE_ENV;
 
   if (env === 'development') {
-    return 'http://localhost:3010/website-api';
+    return 'http://localhost:3001/';
   }
 
   if (env === 'testing') {
-    return 'https://dev.donate-gifts.com/website-api';
+    return 'https://ts-backend-dev-vbamtom7tq-uc.a.run.app/';
   }
 
   return 'https://donate-gifts.com/website-api';
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 module.exports = {
   env: {
+    APP_API_KEY: process.env.APP_API_KEY,
     API_ENDPOINT: getAPIHost()
   },
   sassOptions: {

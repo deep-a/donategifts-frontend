@@ -1,5 +1,23 @@
 @import "includes";
 
+@font-face {
+  font-family: "DK-Crayon-Crumble";
+  font-weight: normal;
+  src: url("/assets/fonts/dk-crayon-crumble-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "DK-Cool-Crayon";
+  font-weight: normal;
+  src: url("/assets/fonts/dkcoolcrayon-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-weight: normal;
+  src: url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,13 +26,13 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+
   body {
     min-height: 100%;
-  }
-}
 
-a {
-  font-family: $font-body;
+    // remove borders from react-bootstrap modal component
+    .modal-content,.modal-header,.modal-footer {
+      border: none;
+    }
+  }
 }

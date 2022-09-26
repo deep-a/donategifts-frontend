@@ -1,0 +1,32 @@
+{
+  "partnerModal": {
+    "title": {
+      "text": "Signing up as a Foster Care Partner?",
+      "icon": "faHandshake"
+    },
+    "body": {
+      "heading": [
+        "Before we proceed, let’s go over a few important things.",
+        "Verification process is fast and easy!"
+      ],
+      "items": [
+        {
+          "icon": "faBan",
+          "text": "No minor or non-certified caregiver can register as a foster care partner to create wish cards on their own, in order to prevent any potential misuse of our site."
+        },
+        {
+          "icon": "faCheckSquare",
+          "text": "Once you are verified as a foster care partner, you can manage the account and create wish cards for the children under your care. You may not have immediate permission to create the wish cards until your account is reviewed and verified."
+        },
+        {
+          "icon": "faEnvelope",
+          "text": "If you are a foster care parent or an agency staff, please use your work email to sign up. We will send a verification link to your work email (email address that is associated with your organization)."
+        },
+        {
+          "icon": "faExclamationTriangle",
+          "text": "Currently, DonateGifts only accepts partnership with non-profit foster care organizations, licensed adoption/ family care agencies, and state-certified domestic foster homes. Please contact us if you have any questions."
+        }
+      ]
+    }
+  }
+}

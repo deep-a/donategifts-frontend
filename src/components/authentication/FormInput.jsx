@@ -1,18 +1,21 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-export const FormInput = React.forwardRef((props, ref) => (
-  <Form.Group className={props.containerClass}>
-    <Form.Control size="lg" type={props.type} name={props.name} ref={ref} placeholder={props.placeholder} />
-    {props.errorMsg ? <p className="text-danger">{props.errorMsg.toString()}</p> : ''}
-  </Form.Group>
-));
+export default function FormInput(props) {
+  const { containerClass, type, name, registerFunc, placeholder, errorMsg } = props;
+  return (
+    <div className={`${containerClass} my-5 px-3 form-group`}>
+      <input type={type} className="form-control form-control-lg" {...registerFunc(name)} placeholder={placeholder} />
+      {errorMsg ? <p className="my-1">{errorMsg.toString()}</p> : ''}
+    </div>
+  );
+}
 
 FormInput.propTypes = {
   containerClass: PropTypes.string,
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  registerFunc: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
   errorMsg: PropTypes.string
 };

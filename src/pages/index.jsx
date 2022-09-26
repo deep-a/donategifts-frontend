@@ -33,7 +33,7 @@ export default function Index({ images }) {
 
   return (
     <BaseLayout pageTitle={t('pageTitle')}>
-      <div className="hero flex-center img-fluid" id="home-bg">
+      <div className="hero center-elements img-fluid" id="home-bg">
         <div className="grid auto-rows-auto">
           <div className="auto-cols-auto">
             <h1>
