@@ -5,11 +5,11 @@ function getAPIHost() {
   const env = process.env.NODE_ENV;
 
   if (env === 'development') {
-    return 'http://localhost:3010/website-api';
+    return 'http://localhost:3001/';
   }
 
   if (env === 'testing') {
-    return 'https://dev.donate-gifts.com/website-api';
+    return 'https://ts-backend-dev-vbamtom7tq-uc.a.run.app/';
   }
 
   return 'https://donate-gifts.com/website-api';
@@ -17,6 +17,7 @@ function getAPIHost() {
 
 module.exports = {
   env: {
+    APP_API_KEY: process.env.APP_API_KEY,
     API_ENDPOINT: getAPIHost()
   },
   sassOptions: {

@@ -1,16 +1,7 @@
-#sign-up {
+#login {
   background: url("/assets/img/gift-white-bg.jpeg") no-repeat;
   background-size: cover;
   min-height: 100vh;
-
-  #agency-switch {
-    &.form-check-input {
-      &:checked {
-        background-color: $secondary;
-        border-color: $secondary;
-      }
-    }
-  }
 
   .container {
     background: linear-gradient(45deg, rgba(255, 95, 109, 0.9), rgba(255, 195, 113, 1));
@@ -20,7 +11,7 @@
       background-color: transparent;
       color: $white;
       border: none;
-      border-radius: 0%;
+      border-radius: 0;
       border-bottom: 2px solid $white;
 
       &::placeholder {
@@ -32,7 +23,6 @@
         box-shadow: none;
       }
     }
-
     label {
       color: $white;
     }

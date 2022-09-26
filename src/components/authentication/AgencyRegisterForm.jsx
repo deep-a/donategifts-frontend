@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import InputMask from 'react-input-mask';
 import { registerAgencyResolver } from '@common/helper/FormHelper';
-import { FormInput } from './FormInput';
+import FormInput from './FormInput';
 
 export default function AgencyRegisterForm() {
   const {
@@ -28,51 +28,61 @@ export default function AgencyRegisterForm() {
 
         <FormInput
           type="text"
-          {...register('agencyName')}
+          name="agencyName"
+          registerFunc={register}
           placeholder="Agency Name"
-          errorMsg={String(errors.agencyName?.message)}
+          errorMsg={errors.agencyName?.message}
         />
 
         <FormInput
           type="text"
-          {...register('agencyWebsite')}
+          name="agencyWebsite"
+          registerFunc={register}
           placeholder="Agency Website (if any)"
-          errorMsg={String(errors.agencyWebsite?.message)}
+          errorMsg={errors.agencyWebsite?.message}
         />
 
         <FormInput
           type="text"
-          {...register('address1')}
+          name="address1"
+          registerFunc={register}
           placeholder="Agency Address Line 1"
-          errorMsg={String(errors.address1?.message)}
+          errorMsg={errors.address1?.message}
         />
 
         <FormInput
           type="text"
-          {...register('address2')}
+          name="address2"
+          registerFunc={register}
           placeholder="Address Line 2"
-          errorMsg={String(errors.address2?.message)}
+          errorMsg={errors.address2?.message}
+        />
+
+        <FormInput type="text" name="city" registerFunc={register} placeholder="City" errorMsg={errors.city?.message} />
+
+        <FormInput
+          type="text"
+          name="state"
+          registerFunc={register}
+          placeholder="State"
+          errorMsg={errors.state?.message}
+        />
+
+        <FormInput
+          type="text"
+          name="zipcode"
+          registerFunc={register}
+          placeholder="Zipcode"
+          errorMsg={errors.zipcode?.message}
         />
 
         <div>
-          <FormInput type="text" {...register('city')} placeholder="City" errorMsg={String(errors.city?.message)} />
-
-          <FormInput type="text" {...register('state')} placeholder="State" errorMsg={String(errors.state?.message)} />
-
           <FormInput
             type="text"
-            {...register('zipcode')}
-            placeholder="Zipcode"
-            errorMsg={String(errors.zipcode?.message)}
-          />
-        </div>
-
-        <div>
-          <FormInput
-            type="text"
-            {...register('country')}
+            name="country"
+            registerFunc={register}
             placeholder="Country"
-            errorMsg={String(errors.country?.message)}
+            errorMsg={errors.country?.message}
           />
 
           <div>
@@ -83,7 +93,7 @@ export default function AgencyRegisterForm() {
                 render={() => <InputMask mask="999-999-9999" maskPlaceholder="Phone Number: 123-456-7890" />}
               />
             </div>
-            <p>{String(errors.agencyPhone?.message)}</p>
+            {errors.agencyPhone?.message}
           </div>
         </div>
 
@@ -91,10 +101,12 @@ export default function AgencyRegisterForm() {
           <div>
             <textarea {...register('agencyBio')} placeholder="Agency Description" />
           </div>
-          <p>{String(errors.agencyBio?.message)}</p>
+          {errors.agencyBio?.message}
         </div>
 
-        <input type="submit" value="Sign Up" />
+        <button type="submit" className="btn-navy-white-lg">
+          Sign Up
+        </button>
       </form>
     </div>
   );

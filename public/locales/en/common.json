@@ -4,7 +4,11 @@
     "missionHyperLink": "Mission",
     "howToHyperLink": "How to",
     "signUpHyperLink": "Sign up",
-    "loginHyperLink": "Login"
+    "loginHyperLink": "Login",
+    "loginModal": {
+      "button": "Login",
+      "signUpText": "Don't have an account yet?"
+    }
   },
   "footer": {
     "contactUsHyperLink": "Contact Us",

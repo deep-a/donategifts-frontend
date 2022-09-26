@@ -29,5 +29,10 @@ html {
 
   body {
     min-height: 100%;
+
+    // remove borders from react-bootstrap modal component
+    .modal-content,.modal-header,.modal-footer {
+      border: none;
+    }
   }
 }
