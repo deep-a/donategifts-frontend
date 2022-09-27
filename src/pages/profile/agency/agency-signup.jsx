@@ -11,7 +11,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function AgencySignUp() {
+export default function AgencySignup() {
   return (
     <BaseLayout pageTitle="Register as a Foster Care Partner">
       <AgencyRegisterForm />

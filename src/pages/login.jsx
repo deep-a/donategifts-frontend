@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import BaseLayout from '@components/layout/BaseLayout';
 import { useForm } from 'react-hook-form';
@@ -7,6 +7,7 @@ import { loginSubmit } from '@common/authentication/AuthenticationApi';
 import { Container, Form } from 'react-bootstrap';
 import FormInput from '@components/authentication/FormInput';
 import { useRouter } from 'next/router';
+import useUserStore from '@store/userStore';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -17,20 +18,35 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Login() {
-  const router = useRouter();
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm({
     resolver: loginResolver
   });
+
+  const router = useRouter();
+
+  const { isLoggedIn, login } = useUserStore();
+
+  useEffect(() => {
+    (async () => {
+      if (isLoggedIn) {
+        await router.push('/profile');
+      } else {
+        // TODO: add some error message here if login fails
+        reset();
+      }
+    })();
+  }, [isLoggedIn]);
 
   const onSubmit = async (data) => {
     const result = await loginSubmit(data);
 
     if (result) {
-      await router.push('/profile');
+      await login({ jwt: result });
     }
   };
 

@@ -2,14 +2,11 @@ const path = require('node:path');
 const { i18n } = require('./next-i18next.config');
 
 function getAPIHost() {
-  const env = process.env.NODE_ENV;
-
-  if (env === 'development') {
+  if (process.env.NODE_ENV === 'development') {
+    if (process.env.API_ENDPOINT) {
+      return process.env.API_ENDPOINT;
+    }
     return 'http://localhost:3001/';
-  }
-
-  if (env === 'testing') {
-    return 'https://ts-backend-dev-vbamtom7tq-uc.a.run.app/';
   }
 
   return 'https://donate-gifts.com/website-api';

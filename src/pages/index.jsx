@@ -29,7 +29,7 @@ export default function Index({ images }) {
     const wait = Number.parseInt(txtElement.dataset.wait, 10);
     const tw = new TypeWriter(txtElement, words, wait);
     tw.type();
-  });
+  }, []);
 
   return (
     <BaseLayout pageTitle={t('pageTitle')}>

@@ -8,7 +8,9 @@
     "loginModal": {
       "button": "Login",
       "signUpText": "Don't have an account yet?"
-    }
+    },
+    "logoutHyperLink": "Log out",
+    "profileHyperLink": "Profile"
   },
   "footer": {
     "contactUsHyperLink": "Contact Us",

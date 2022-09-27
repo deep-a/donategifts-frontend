@@ -4,9 +4,24 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import LoginModal from '@components/authentication/LoginModal';
+import useUserStore from '@store/userStore';
+import { useRouter } from 'next/router';
 
 export default function NavBar() {
+  const router = useRouter();
   const { t } = useTranslation('common');
+  const { isLoggedIn, logout } = useUserStore();
+  const [show, setShow] = useState(false);
+
+  const handleShowModal = () => {
+    setShow(!show);
+  };
+
+  const handleLogout = async () => {
+    logout();
+    await router.push('/');
+  };
+
   const navItems = {
     items: [
       {
@@ -22,12 +37,6 @@ export default function NavBar() {
         link: '/howto'
       }
     ]
-  };
-
-  const [show, setShow] = useState(false);
-
-  const handleShowModal = () => {
-    setShow(!show);
   };
 
   return (
@@ -57,13 +66,27 @@ export default function NavBar() {
                 </button>
               </Link>
             ))}
-            <button type="button" className="btn-link my-3 my-sm-auto" onClick={handleShowModal}>
-              {t('navBar.loginHyperLink')}
-            </button>
+            {!isLoggedIn && (
+              <button type="button" className="btn-link my-3 my-sm-auto" onClick={handleShowModal}>
+                {t('navBar.loginHyperLink')}
+              </button>
+            )}
+            {isLoggedIn && (
+              <>
+                <Link href="/profile">
+                  <button type="button" className="btn-link my-3 my-sm-auto">
+                    {t('navBar.profileHyperLink')}
+                  </button>
+                </Link>
+                <button type="button" className="btn-link my-3 my-sm-auto" onClick={handleLogout}>
+                  {t('navBar.logoutHyperLink')}
+                </button>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
 
-        <LoginModal show={show} onHide={handleShowModal} />
+        {!isLoggedIn && <LoginModal show={show} onHide={handleShowModal} />}
       </Container>
     </Navbar>
   );

@@ -1,6 +1,6 @@
+import '@styles/style.scss';
 import React, { useEffect } from 'react';
 import { appWithTranslation } from 'next-i18next';
-import '@styles/style.scss';
 import { SSRProvider } from 'react-bootstrap';
 import { applyIcons } from '@common/utils/faIcons';
 
@@ -13,11 +13,15 @@ function App({ Component, pageProps }) {
     import('bootstrap/dist/js/bootstrap.bundle.min');
   }, []);
 
+  return <Component {...pageProps} />;
+}
+
+function WrappedApp(props) {
   return (
     <SSRProvider>
-      <Component {...pageProps} />
+      <App {...props} />
     </SSRProvider>
   );
 }
 
-export default appWithTranslation(App);
+export default appWithTranslation(WrappedApp);

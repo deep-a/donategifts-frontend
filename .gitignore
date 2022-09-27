@@ -1,6 +1,5 @@
 .idea
 .vscode
-.env
 
 # Ignore Mac system files & workspace
 .DS_store
@@ -49,7 +48,7 @@ yarn-error.log*
 # local env files
 .env.local
 .env.development.local
-.env.test.local
+.env
 .env.production.local
 
 # vercel

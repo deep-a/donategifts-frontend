@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import BaseLayout from '@components/layout/BaseLayout';
 import { Container, Form } from 'react-bootstrap';
@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { registerResolver } from '@common/helper/FormHelper';
 import { useRouter } from 'next/router';
 import { registerSubmit } from '@common/authentication/AuthenticationApi';
+import useUserStore from '@store/userStore';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -29,18 +30,33 @@ export default function SignUp() {
 
   const router = useRouter();
 
+  const [loading, setLoading] = useState(false);
+  const { isLoggedIn, user, apiError, registerUser } = useUserStore();
+
+  useEffect(() => {
+    (async () => {
+      if (isLoggedIn) {
+        if (user.role === 'DONOR') {
+          await router.push('/profile');
+        } else {
+          await router.push('/profile/agency/agency-signup');
+        }
+      } else if (apiError.data) {
+        // TODO: add some indicator that an api error occurred
+      }
+    })();
+  }, [isLoggedIn, user, apiError]);
+
   const onSubmit = async (data) => {
-    const { userRole, email, password } = data;
+    setLoading(true);
+    const { firstName, lastName, userRole, email, password } = data;
 
     const result = await registerSubmit({ email, password });
 
     if (result) {
-      if (userRole === 'agency') {
-        await router.push('/profile/agency/agency-signup');
-      } else {
-        await router.push('/profile');
-      }
+      await registerUser({ firstName, lastName, userRole, email, jwt: result });
     } else {
+      // TODO: add some error message here if register fails
       reset();
     }
   };
@@ -127,9 +143,20 @@ export default function SignUp() {
             </div>
 
             <div className="center-elements">
-              <button type="submit" className="btn-navy-white-lg">
-                Sign Up
-              </button>
+              {loading && (
+                <button type="submit" className="btn-navy-white-lg" disabled>
+                  <div className="d-flex align-items-center">
+                    <span>Loading</span>
+                    <div className="spinner-border ms-2" role="status" aria-hidden="true" />
+                  </div>
+                </button>
+              )}
+
+              {!loading && (
+                <button type="submit" className="btn-navy-white-lg">
+                  Sign Up
+                </button>
+              )}
             </div>
           </Form>
 

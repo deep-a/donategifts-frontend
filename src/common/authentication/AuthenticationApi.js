@@ -1,5 +1,6 @@
 import { initializeApp, getApps } from 'firebase/app';
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import logger from '@common/utils/logger';
 
 if (getApps().length === 0) {
   initializeApp({
@@ -45,7 +46,7 @@ export const registerSubmit = async (data) => {
   try {
     return await registerUserWithFireBase(data);
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 
   return false;
@@ -56,7 +57,7 @@ export const loginSubmit = async (data) => {
   try {
     return await loginUserWithFireBase(data);
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 
   return false;

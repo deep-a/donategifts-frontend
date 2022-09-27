@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { loginResolver } from '@common/helper/FormHelper';
 import { loginSubmit } from '@common/authentication/AuthenticationApi';
 import Link from 'next/link';
+import useUserStore from '@store/userStore';
 import FormInput from './FormInput';
 
 export default function LoginModal(props) {
@@ -17,16 +18,30 @@ export default function LoginModal(props) {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm({
     resolver: loginResolver
   });
+
+  const { isLoggedIn, login } = useUserStore();
+
+  useEffect(() => {
+    (async () => {
+      if (isLoggedIn) {
+        await router.push('/profile');
+      } else {
+        // TODO: add some error message here if login fails
+        reset();
+      }
+    })();
+  }, [isLoggedIn]);
 
   const onSubmit = async (data) => {
     const result = await loginSubmit(data);
 
     if (result) {
-      await router.push('/profile');
+      await login({ jwt: result });
     }
   };
 
