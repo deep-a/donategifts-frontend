@@ -34,5 +34,12 @@ html {
     .modal-content,.modal-header,.modal-footer {
       border: none;
     }
+
+    // makes all checkboxes a bit bigger
+    .form-check-input {
+      width: 1.1em;
+      height: 1.1em;
+      margin-top: 0.2em;
+    }
   }
 }
