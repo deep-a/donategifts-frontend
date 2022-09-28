@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function FormInput(props) {
   const { containerClass, type, name, registerFunc, placeholder, errorMsg, useMargin, usePadding } = props;
   return (
-    <div className={`${containerClass} ${useMargin ? 'my-5' : ''} ${usePadding ? 'px-3' : ''} form-group`}>
+    <div className={`${containerClass} ${useMargin ? 'my-5' : ''} ${usePadding ? 'px-3' : ''} form-group custom-input`}>
       <input type={type} className="form-control form-control-lg" {...registerFunc(name)} placeholder={placeholder} />
       {errorMsg ? <p className="my-1">{errorMsg.toString()}</p> : ''}
     </div>

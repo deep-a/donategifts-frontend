@@ -129,7 +129,7 @@ export default function SignUp() {
               errorMsg={errors.passwordConfirm?.message}
             />
 
-            <div className="my-5 ms-3 form-check">
+            <div className="my-5 ms-3 form-check custom-input">
               <input
                 {...register('isAgency')}
                 type="checkbox"

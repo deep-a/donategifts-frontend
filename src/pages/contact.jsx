@@ -78,7 +78,7 @@ export default function Contact() {
                     placeholder={t('form.placeholder.subject')}
                     errorMsg={errors.subject?.message}
                   />
-                  <div id="contact-form-message" className="p-3 form-group">
+                  <div id="contact-form-message" className="p-3 form-group custom-input">
                     <textarea
                       rows="5"
                       id="message"

@@ -140,32 +140,34 @@ $utilities: map-merge(
 }
 
 %form-inputs {
-  input, textarea {
-    color: $white;
-
-    &:not([type="checkbox"]) {
-      background-color: transparent;
-      border: none;
-      border-radius: 0;
-      border-bottom: 2px solid $white;
-    }
-
-    &::placeholder {
+  .custom-input {
+    input, textarea {
       color: $white;
-      opacity: 1;
+
+      &:not([type="checkbox"]) {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        border-bottom: 2px solid $white;
+      }
+
+      &::placeholder {
+        color: $white;
+        opacity: 1;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
     }
 
-    &:focus {
-      box-shadow: none;
+    label {
+      color: $white;
     }
-  }
 
-  label {
-    color: $white;
-  }
-
-  p {
-    color: shade-color($red, 40%);
+    p {
+      color: shade-color($red, 40%);
+    }
   }
 }
 
