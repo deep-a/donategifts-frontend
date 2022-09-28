@@ -1,0 +1,64 @@
+#contact {
+  h2 {
+    @include font-styling($font-heading, 2rem, $red, $font-medium);
+  }
+  p{
+    @include font-styling($font-body, $font-medium);
+  }
+  a {
+    @include font-styling($font-body, 1rem, $red, $font-bold);
+    text-decoration: none;
+
+    &:hover {
+      @include font-styling($font-body, 1rem, $red, $font-bold);
+      text-decoration: underline;
+    }
+  }
+  .contact-form-wrapper{
+    background: linear-gradient(45deg, rgba(255, 95, 109, 0.9), rgba(255, 195, 113, 1));
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+  }
+
+  .form-group:nth-child(-n+3){
+    margin: 0 !important;
+  }
+  //Hide form labels.
+  .contact-label{
+    display: none;
+  }
+  input[type="text"], input[type="email"], textarea{
+    background-color: transparent;
+    color: $white;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid $white;
+
+    &::placeholder {
+      color: $white;
+      opacity: 1;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  //Message box resize disabled.
+  .contact-form-message {
+    font-size: 1.35rem;
+    line-height: 1.2;
+    resize: none;
+  }
+
+  //First 2 inputs take full width on smaller screens.
+  #contact-form-name, #contact-form-email{
+    @include media-breakpoint-down(md){
+      width: 100%;
+    }
+  }
+
+}
+
+

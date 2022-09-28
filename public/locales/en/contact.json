@@ -1,0 +1,24 @@
+{
+  "pageTitle": "Contact Donate Gifts",
+  "section": {
+    "heading": "Get in Touch",
+    "instruction": "Please fill out form and we will be in touch as soon as possible. Perhaps your question has been answered, see our",
+    "instruction2": " FAQ ",
+    "instruction3": "page."
+  },
+  "form": {
+    "label": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "placeholder": {
+      "name": "Name: " ,
+      "email": "Email: ",
+      "subject": "Subject: ",
+      "message": "Message: "
+    },
+    "button": "Send Message"
+  }
+}

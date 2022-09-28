@@ -35,6 +35,14 @@ const AgencyRegisterFormSchema = Yup.object().shape({
   agencyBio: Yup.string().required('Agency Description is Required')
 });
 
+const contactFormSchema = Yup.object().shape({
+  fullName: Yup.string().required('Name is Required'),
+  email: Yup.string().required('Email is Required'),
+  subject: Yup.string().required('Subject is Required'),
+  message: Yup.string().required('Message is Required')
+});
+
 export const registerResolver = yupResolver(registerFormSchema);
 export const loginResolver = yupResolver(loginFormSchema);
 export const registerAgencyResolver = yupResolver(AgencyRegisterFormSchema);
+export const contactResolver = yupResolver(contactFormSchema);
