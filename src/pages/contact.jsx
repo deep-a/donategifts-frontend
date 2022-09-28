@@ -5,8 +5,8 @@ import { useForm } from 'react-hook-form';
 import { contactResolver } from '@common/helper/FormHelper';
 import { Container, Form } from 'react-bootstrap';
 import FormInput from '@components/authentication/FormInput';
-import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import logger from '@common/utils/logger';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -19,13 +19,17 @@ export async function getStaticProps({ locale }) {
 export default function Contact() {
   const {
     register,
-    // handleSubmit,
+    handleSubmit,
     formState: { errors }
   } = useForm({
     resolver: contactResolver
   });
 
   const { t } = useTranslation('contact');
+
+  const sendMessage = (data) => {
+    logger.log(data);
+  };
 
   return (
     <BaseLayout pageTitle={t('pageTitle')}>
@@ -34,63 +38,47 @@ export default function Contact() {
           <Container className="row d-flex justify-content-center">
             <div className="col-11 text-center">
               <h2>{t('section.heading')}</h2>
-              <p>
-                {t('section.instruction')}
-                <Link href="/faq" className="link-faq">
-                  {t('section.instruction2')}
-                </Link>
-                {t('section.instruction3')}
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t('section.instruction') }} />
             </div>
             <div className="col-11 d-flex justify-content-center align-items-center">
-              <div className="contact-form-wrapper">
-                <Form>
+              <div className="contact-form-wrapper w-100 p-2 p-md-4">
+                <Form onSubmit={handleSubmit(sendMessage)}>
                   <div className=" col-md-12 d-flex flex-wrap justify-content-between">
                     <div className="col-md-6" id="contact-form-name">
-                      <label htmlFor="name" className="contact-label">
-                        {t('form.label.name')}
-                      </label>
                       <FormInput
                         type="text"
-                        name="name"
+                        name="fullName"
+                        useMargin={false}
+                        containerClass="my-2"
                         registerFunc={register}
                         placeholder={t('form.placeholder.name')}
                         errorMsg={errors.fullName?.message}
                       />
                     </div>
                     <div className="col-md-6" id="contact-form-email">
-                      <label htmlFor="email" className="contact-label">
-                        {t('form.label.email')}
-                      </label>
                       <FormInput
                         id="email"
-                        containerClass="mt-5"
                         type="email"
                         name="email"
+                        containerClass="my-2"
+                        useMargin={false}
                         registerFunc={register}
                         placeholder={t('form.placeholder.email')}
                         errorMsg={errors.email?.message}
                       />
                     </div>
                   </div>
-                  <div className="mt-3">
-                    <Form.Label htmlFor="subject" className="contact-label">
-                      {t('form.label.subject')}
-                    </Form.Label>
-                    <FormInput
-                      id="subject"
-                      containerClass="mt-3"
-                      type="text"
-                      name="subject"
-                      registerFunc={register}
-                      placeholder={t('form.placeholder.subject')}
-                      errorMsg={errors.subject?.message}
-                    />
-                  </div>
+                  <FormInput
+                    id="subject"
+                    type="text"
+                    name="subject"
+                    containerClass="my-2"
+                    useMargin={false}
+                    registerFunc={register}
+                    placeholder={t('form.placeholder.subject')}
+                    errorMsg={errors.subject?.message}
+                  />
                   <div id="contact-form-message" className="p-3 form-group">
-                    <label htmlFor="message" className="contact-label">
-                      {t('form.label.message')}
-                    </label>
                     <textarea
                       rows="5"
                       id="message"

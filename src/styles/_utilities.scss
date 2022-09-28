@@ -139,6 +139,36 @@ $utilities: map-merge(
   }
 }
 
+%form-inputs {
+  input, textarea {
+    color: $white;
+
+    &:not([type="checkbox"]) {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      border-bottom: 2px solid $white;
+    }
+
+    &::placeholder {
+      color: $white;
+      opacity: 1;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  label {
+    color: $white;
+  }
+
+  p {
+    color: shade-color($red, 40%);
+  }
+}
+
 %btn {
   -webkit-appearance: none;
   -moz-appearance: none;

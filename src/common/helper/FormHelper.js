@@ -37,7 +37,7 @@ const AgencyRegisterFormSchema = Yup.object().shape({
 
 const contactFormSchema = Yup.object().shape({
   fullName: Yup.string().required('Name is Required'),
-  email: Yup.string().required('Email is Required'),
+  email: Yup.string().required('Email is Required').email(),
   subject: Yup.string().required('Subject is Required'),
   message: Yup.string().required('Message is Required')
 });

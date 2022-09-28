@@ -2,9 +2,7 @@
   "pageTitle": "Contact Donate Gifts",
   "section": {
     "heading": "Get in Touch",
-    "instruction": "Please fill out form and we will be in touch as soon as possible. Perhaps your question has been answered, see our",
-    "instruction2": " FAQ ",
-    "instruction3": "page."
+    "instruction": "Please fill out form and we will be in touch as soon as possible. Perhaps your question has been answered, see our <a href='/faq' class='link-faq'>FAQ</a> page."
   },
   "form": {
     "label": {
